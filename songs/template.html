@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Song Title - Artist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="home"><a href="../index.html">← Index</a></nav>
+    <h1>Song Title - Artist</h1>
+
+    <fieldset class="scrollControls">
+      <legend>Scroll Speed</legend>
+      <label><input type="radio" name="scrollSpeed" value="off" checked>Off</label>
+    </fieldset>
+
+    <!-- Set key data attributes -->
+    <select class="key" data-initial="" data-preferred=""></select>
+    <!-- one li per chord used, which contains an image of the chord -->
+    <ul class="chordList"></ul>
+    <!-- flat ♭ U+266D | natural ♮ U+266E | sharp ♯ U+266F -->
+    <section>Start singing on: &nbsp; <b class="chord"></b><img class="note" data-note=""></section>
+
+    <article><!-- the article contains the whole song; each stanza is a section, each line is a p -->
+      <section class="spaced">
+        <!-- Intro chords -->
+        <p><b class="chord"></b></p>
+      </section>
+
+      <section>
+      </section>
+    </article>
+
+    <aside>
+      <h3>Notes</h3>
+      <p>
+        For strumming anotation: ⬇⬆
+      </p>
+    </aside>
+    <script type="text/javascript" src="../chords.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "script"
+  },
+  "rules": {
+    "arrow-parens": [
+      "warn",
+      "always"
+    ],
+    "class-methods-use-this": ["error", {
+      "exceptMethods": ["render"]
+    }],
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "implicit-arrow-linebreak": [
+      "off"
+    ],
+    "import/extensions": [
+      "off"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
+    ],
+    "no-bitwise": [
+      "error",
+      {
+        "int32Hint": true,
+        "allow": ["|", "&"]
+      }
+    ],
+    "no-console": [
+      "error",
+      { "allow": ["warn", "error"] }
+    ],
+    "no-mixed-operators": [
+      "error",
+      {
+        "groups": [
+            ["+", "-", "*", "/", "%", "**"],
+            ["&", "|", "^", "~", "<<", ">>", ">>>"],
+            ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+            ["&&", "||"],
+            ["in", "instanceof"]
+        ],
+        "allowSamePrecedence": true
+      }
+    ],
+    "no-plusplus": [
+      "error",
+      { "allowForLoopAfterthoughts": true }
+    ],
+    "one-var": [
+      "error",
+      {
+        "initialized": "never",
+        "uninitialized": "always"
+      }
+    ],
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": { "?": "ignore", ":": "ignore" }
+      }
+    ],
+    "prefer-destructuring": ["error", {
+      "array": false,
+      "object": true
+    }],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}

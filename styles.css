@@ -1,0 +1,171 @@
+:root {
+  --spacing: 16px;
+  --half-spacing: 8px;
+  --negative-spacing: -16px;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 8px 8px 24px;
+}
+
+li {
+  margin: 16px 0;
+}
+
+article {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: var(--spacing);
+  margin-right: 75px;
+  word-spacing: 2px;
+}
+
+section {
+  margin-bottom: 36px;
+  position: relative;
+}
+
+p {
+  margin: 12px 0;
+  padding-top: var(--spacing);
+  position: relative;
+}
+
+p.spaced,
+.spaced p {
+  height: 0;
+}
+
+.chord {
+  color: #900;
+  font-weight: normal;
+  letter-spacing: -1px;
+  position: absolute;
+  top: 0;
+}
+
+.spaced.chord,
+.spaced .chord {
+  display: inline-block;
+  margin: 0 var(--half-spacing);
+  min-width: 1.75em;
+  padding: 0 var(--half-spacing);
+  position: relative;
+  text-align: center;
+  top: var(--negative-spacing);
+}
+
+p.spaced .chord:first-child,
+p .chord.spaced:first-child,
+.spaced p .chord:first-child {
+  text-align: left;
+  margin: 0 var(--half-spacing) 0 0;
+  padding: 0 var(--half-spacing) 0 0;
+}
+
+.chord i {
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 -3px;
+  color: blue;
+}
+
+.pre {
+  white-space: pre;
+}
+
+.chordList {
+  background-color: white;
+  /* box-shadow: 0 2px 2px 1px #999; */
+  list-style-type: none;
+  margin: 8px -8px 4px;
+  padding: 8px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.chordList li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.chordList img {
+  max-height: 80px;
+}
+
+.scrollControls {
+  display: inline-block;
+  float: right;
+  padding: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.scrollControls legend {
+  max-width: 50px;
+}
+
+.scrollControls label {
+  background-color: #f6f3ff;
+  display: block;
+  padding: var(--half-spacing);
+  margin: var(--half-spacing) 0;
+}
+
+.scrollControls input {
+  margin: 0 var(--half-spacing) 0 0;
+}
+
+aside {
+  border-top: solid 1px #999;
+}
+
+aside h3 {
+  margin: var(--half-spacing) 0;
+}
+
+aside p {
+  margin: 0;
+  padding: 0;
+}
+
+article aside {
+  border: none;
+  color: green;
+  margin: var(--half-spacing) 0;
+  padding: 0;
+}
+
+.log,
+.error {
+  border-radius: 4px;
+  font-family: monospace;
+  margin: 4px auto;
+  padding: 4px;
+}
+
+.error {
+  background-color: #fcc;
+  border: solid 1px #900;
+}
+
+.log {
+  background-color: #ddf;
+  border: solid 1px #009;
+}
+
+.log p {
+  padding: 0;
+  margin: var(--half-spacing) 0;
+}
+
+.shuffle {
+  float: right;
+}
+
+
+
+

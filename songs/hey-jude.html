@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hey Jude - The Beatles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset=utf-8>
+  </head>
+  <body>
+    <nav class="home"><a href="../index.html">← Index</a></nav>
+    <h1>Hey Jude - The Beatles</h1>
+
+    <fieldset class="scrollControls">
+      <legend>Scroll Speed</legend>
+      <label><input type="radio" name="scrollSpeed" value="off" checked>Off</label>
+    </fieldset>
+
+    <!-- Set key data attributes -->
+    <select class="key" data-initial="G" data-current="G"></select>
+    <span>Original key: F</span>
+    <!-- one li per chord used, which contains an image of the chord -->
+    <ul class="chordList"></ul>
+    <section>Start singing on: &nbsp;  <b class="chord">D  </b><img class="note" data-note="D"></section>
+
+    <article><!-- the article contains the whole song; each stanza is a section, each line is a p   -->
+<!--
+      <section class="spaced">
+        <! -- Intro chords - - >
+        <p><b class="chord"></b></p>
+      </section>
+-->
+      <section>
+        <p>Hey <b class="chord">G</b>Jude, don’t make it <b class="chord">D</b>bad</p>
+        <p>Take a <b class="chord">D7</b>sad song and make it <b class="chord">G</b>better</p>
+        <p>Re<b class="chord">C</b>member to let her into your <b class="chord">G</b>heart</p>
+        <p>Then you can <b class="chord">D7</b>start to make it <b class="chord">G</b>better</p>
+      </section>
+
+      <section>
+        <p>Hey <b class="chord">G</b>Jude, don’t be afr<b class="chord">D</b>aid</p>
+        <p>You were <b class="chord">D7</b>made to go out and <b class="chord">G</b>get her</p>
+        <p>The <b class="chord">C</b>minute you let her under your <b class="chord">G</b>skin</p>
+        <p>Then you beg<b class="chord">D7</b>in to make it <b class="chord">G</b>better <span class="spaced"><b class="chord">G7</b></span></p>
+      </section>
+
+      <section>
+        <p>And anytime you feel the <b class="chord">C</b>pain, hey <b class="chord">Em</b>Jude, re<b class="chord">Am</b>frain</p>
+        <p>Don’t <b class="chord">Am7</b>carry the <b class="chord">D7</b>world upon your <b class="chord">G</b>shoulders <span class="spaced"><b class="chord">G7</b></span></p>
+        <p>For well you know that it’s a <b class="chord">C</b>fool who <b class="chord">Em</b>plays it <b class="chord">Am</b>cool</p>
+        <p>By <b class="chord">Am7</b>making his <b class="chord">D7</b>world a little <b class="chord">G</b>colder</p>
+        <p>Nah nah nah <b class="chord">G7</b>nah nah <b class="chord">D</b>nah nah nah nah</p>
+      </section>
+
+      <section>
+        <p>Hey <b class="chord">G</b>Jude, don’t let me <b class="chord">D</b>down</p>
+        <p>You have <b class="chord">D7</b>found her, now go and <b class="chord">G</b>get her</p>
+        <p>Rem<b class="chord">C</b>ember to let her into your <b class="chord">G</b>heart</p>
+        <p>Then you can <b class="chord">D7</b>start to make it <b class="chord">G</b>better <span class="spaced"><b class="chord">G7</b></span></p>
+      </section>
+
+      <section>
+        <p>So let it out and let it <b class="chord">C</b>in, hey <b class="chord">Em</b>Jude, be<b class="chord">Am</b>gin</p>
+        <p>You’re <b class="chord">Am7</b>waiting for <b class="chord">D7</b>someone to per<b class="chord">G</b>form with<b class="chord spaced">G7</b></p>
+        <p>And don’t you know that it’s just <b class="chord">C</b>you, hey <b class="chord">Em</b>Jude, you’ll <b class="chord">Am</b>do</p>
+        <p>The <b class="chord">Am7</b>movement you <b class="chord">D7</b>need is on your <b class="chord">G</b>shoulder</p>
+        <p>Nah nah nah <b class="chord">G7</b>nah nah <b class="chord">D</b>nah nah nah nah yeah</p>
+      </section>
+
+      <section>
+        <p>Hey <b class="chord">G</b>Jude, don’t make it <b class="chord">D</b>bad</p>
+        <p>Take a <b class="chord">D7</b>sad song and make it <b class="chord">G</b>better</p>
+        <p>Re<b class="chord">C</b>member to let her under your <b class="chord">G</b>skin</p>
+        <p>Then you beg<b class="chord">D7</b>in to make it</p>
+        <p><b class="chord">G</b>Better, better, better, better, better, better, oh</p>
+      </section>
+
+      <section>
+        <p><b class="chord">G</b>Nah nah nah, <b class="chord">F</b>nah nah nah nah, <b class="chord">C</b>nah nah nah nah, hey <b class="chord">G</b>Jude</p>
+        <p><b class="chord">G</b>Nah nah nah, <b class="chord">F</b>nah nah nah nah, <b class="chord">C</b>nah nah nah nah, hey <b class="chord">G</b>Jude</p>
+        <p><b class="chord">G</b>Nah nah nah, <b class="chord">F</b>nah nah nah nah, <b class="chord">C</b>nah nah nah nah, hey <b class="chord">G</b>Jude</p>
+      </section>
+    </article>
+
+    <aside>
+      <h3>Notes</h3>
+      <p>
+        For stumming anotation: ⬇⬆
+      </p>
+    </aside>
+
+    <script type="text/javascript" src="../chords.js"></script>
+  </body>
+</html>
