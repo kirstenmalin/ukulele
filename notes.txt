@@ -1,5 +1,8 @@
 Notes
 
+To do an npm install on the tablet, use the --no-bin-links option:
+	npm install --save svgdom --no-bin-links
+
 - Make chords dark red
 - Make a spot at the bottom of each song for notes
 - Grab the chord images and make them sticky at the top - position: sticky

@@ -1,7 +1,7 @@
 {
   "name": "ukulele",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tools for displaying song lyrics and chords for the ukulele",
   "main": "index.js",
   "scripts": {
     "start": "node ./server/index.js",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kirstenmalin/ukulele#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "@svgdotjs/svg.js": "^3.0.16",
+    "express": "^4.17.1",
+    "svgdom": "0.0.21"
   }
 }
