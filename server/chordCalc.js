@@ -32,8 +32,8 @@ function logBadChord (chordName) {
 
 // This function calculates which notes are in a given chord.
 // It does not determine which notes, if any, should be repeated.
-function chordCalc (chordName) {
-	// I want to make this case-insensitive
+function chordCalc (c) {
+	const chordName = c.slice(0, 1).toUpperCase() + c.slice(1).toLowerCase();
 	// figure out what type of chord it is
 	// look for each of the notes in allNotes at index 0 of the chordName
 	const note = allNotes.find((current) => {
@@ -48,6 +48,7 @@ function chordCalc (chordName) {
 	const chordType = chordName.replace(note, '') || 'major';
 	// use the correct relationship between chord elements to determine what notes are in the chord:
 	// determine whether to use notesSharp or notesFlat
+	// Need to correctly handle minor chords
 	const useSharps = note.indexOf('♯') !== -1 || keysWithSharp.indexOf(note) !== -1;
 	// find the index of the chord note in notesSharp or notesFlat
 	const notesList = useSharps ? notesSharp : notesFlat;
