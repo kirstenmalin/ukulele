@@ -25,6 +25,7 @@ const chordTypeDfns = {
 	sus4: [],
 	'7sus4': []
 };
+const minorChordTypes = ['m', 'm7', 'm6', 'm9'];
 
 function logBadChord (chordName) {
 	console.log('Invalid chord: ', chordName);
@@ -34,33 +35,23 @@ function logBadChord (chordName) {
 // It does not determine which notes, if any, should be repeated.
 function chordCalc (c) {
 	const chordName = c.slice(0, 1).toUpperCase() + c.slice(1).toLowerCase();
-	// figure out what type of chord it is
-	// look for each of the notes in allNotes at index 0 of the chordName
-	const note = allNotes.find((current) => {
+	const tonic = allNotes.find((current) => {
 		return chordName.indexOf(current) === 0;
 	});
-	if (!note) {
+	if (!tonic) {
 		logBadChord(chordName);
 		return [];
 	}
-	// when found, replace the note with empty string, and the resulting string is the chord type
-	// if the chord type is an empty string, it's 'major'
-	const chordType = chordName.replace(note, '') || 'major';
-	// use the correct relationship between chord elements to determine what notes are in the chord:
-	// determine whether to use notesSharp or notesFlat
-	// Need to correctly handle minor chords
-	const useSharps = note.indexOf('♯') !== -1 || keysWithSharp.indexOf(note) !== -1;
-	// find the index of the chord note in notesSharp or notesFlat
+	const chordType = chordName.replace(tonic, '') || 'major';
+	const key = minorChordTypes.indexOf(chordType) === -1 ? tonic : tonic + 'm';
+	const useSharps = tonic.indexOf('♯') !== -1 || keysWithSharp.indexOf(key) !== -1;
 	const notesList = useSharps ? notesSharp : notesFlat;
-	const notesIndex = notesList.findIndex((current) => note === current);
+	const notesIndex = notesList.findIndex((current) => tonic === current);
 	
 	if (notesIndex === -1 || !chordTypeDfns[chordType]) {
 		logBadChord(chordName);
 		return [];
 	}
-	// For each value in the chordTypeDfn array, add the value to the index of the chord note and mod by the number of note names in the array
-	// the result is the note for that part of the chord
-	// push the note onto the chordArray
 	const chordArray = chordTypeDfns[chordType].map((offset) => {
 		return notesList[(notesIndex + offset) % notesList.length];
 	});
