@@ -14,13 +14,8 @@ const dfns = require('./definitions.js');
 
 function something(notesArray) {
 	return (fret, i) => {
-		console.log('fret:', fret, ', i:', i);
 		const openIndex = notesArray.indexOf(dfns.openStringNotes[i]);
-		console.log('openIndex:', openIndex);
-		console.log('openIndex + fret:', openIndex + parseInt(fret, 10));
 		const frettedNoteIndex = (openIndex + parseInt(fret, 10)) % 12;
-		console.log('frettedNoteIndex:', frettedNoteIndex);
-		console.log('********');
 		return notesArray[frettedNoteIndex];
 	};
 }
