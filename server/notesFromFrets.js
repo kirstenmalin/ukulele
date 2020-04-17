@@ -12,7 +12,7 @@ const dfns = require('./definitions.js');
 // notesFlat
 // openStringNotes
 
-function something(notesArray) {
+function getNote(notesArray) {
 	return (fret, i) => {
 		const openIndex = notesArray.indexOf(dfns.openStringNotes[i]);
 		const frettedNoteIndex = (openIndex + parseInt(fret, 10)) % 12;
@@ -27,8 +27,8 @@ function getNotesFromFrets(frets) {
 		frets = frets.replace('[', '').replace(']', '').replace(/s/g, '').split(',');
 	}
 	return {
-		notesSharps: frets.map(something(dfns.notesSharp)),
-		notesFlats: frets.map(something(dfns.notesFlat))
+		notesSharps: frets.map(getNote(dfns.notesSharp)),
+		notesFlats: frets.map(getNote(dfns.notesFlat))
 	};
 }
 

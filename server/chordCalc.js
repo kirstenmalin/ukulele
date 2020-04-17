@@ -28,7 +28,7 @@ function chordCalc (c) {
 	const chordArray = dfns.chordTypeDfns[chordType].map((offset) => {
 		return notesList[(notesIndex + offset) % notesList.length];
 	});
-	return JSON.stringify(chordArray);
+	return chordArray;
 }
 
 module.exports = chordCalc;
