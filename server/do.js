@@ -4,7 +4,7 @@ const getNotesFromFrets = require('./notesFromFrets.js');
 const chordCalcIndex = process.argv.indexOf('--chord-calc');
 if (chordCalcIndex > -1) {
 	let chordName = process.argv[chordCalcIndex + 1]
-	console.log('Chord name: ', chordName);
+	//console.log('Chord name: ', chordName);
 	console.log('Chord notes: ', chordCalc(chordName));
 }
 

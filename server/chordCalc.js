@@ -8,6 +8,7 @@ function logBadChord (chordName) {
 // It does not determine which notes, if any, should be repeated.
 function chordCalc (c) {
 	const chordName = c.slice(0, 1).toUpperCase() + c.slice(1).toLowerCase();
+	console.log('Chord Name:', chordName);
 	const tonic = dfns.allNotes.find((current) => {
 		return chordName.indexOf(current) === 0;
 	});
