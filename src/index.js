@@ -2,7 +2,7 @@
 const songList = document.querySelector('.songList');
 const shuffleBtn = document.querySelector('button.shuffle');
 
-function escape(msg) {
+function escapeHTML(msg) {
   if (!msg) {
     return false;
   }
@@ -10,7 +10,7 @@ function escape(msg) {
 }
 
 function showError(err) {
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escape(err.stack) || escape(err)}</p>`);
+  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
 }
 
 function log(msg) {
@@ -19,7 +19,7 @@ function log(msg) {
     document.body.insertAdjacentHTML('afterbegin', '<section class="log"></section>');
     log = document.querySelector('.log');
   }
-  log.insertAdjacentHTML('beforeend', `<p>${escape(msg)}</p>`);
+  log.insertAdjacentHTML('beforeend', `<p>${escapeHTML(msg)}</p>`);
 }
 
 // ******************************** Maintain Shuffle Order
@@ -28,7 +28,7 @@ function getOrder() {
   const params = new URLSearchParams(url.searchParams);
   const order = params.get('order');
   return order ? order.split(',') : [];
-  
+
 }
 
 function setSongOrder(order) {
@@ -46,7 +46,7 @@ function setOrderParam(order) {
   const orderParam = order.join(',');
   const url = window.location.toString();
   const queryIndex = url.indexOf('?');
-  window.location = url.substr(0, queryIndex) + '?order=' + orderParam; 
+  window.location = url.substr(0, queryIndex) + '?order=' + orderParam;
   // const url = new URL(window.location);
   // const params = new URLSearchParams(url.searchParams);
   // params.set('order', orderParam);
@@ -67,11 +67,11 @@ function shuffle(deck) {
 function shuffleSongs() {
   try {
     const songs = Array.from(songList.querySelectorAll('li'));
-    currentOrder = songs.map((song) => {
+    const currentOrder = songs.map((song) => {
       return song.dataset.index;
     });
     const newOrder = shuffle(currentOrder);
-  
+
     setOrderParam(newOrder);
     setSongOrder(newOrder);
   } catch (err) {
@@ -87,7 +87,7 @@ function setIndices() {
 }
 
 // ******************************** Initialization
-try {  
+try {
   setIndices();
   setSongOrder(getOrder());
   shuffleBtn.addEventListener('click', shuffleSongs);

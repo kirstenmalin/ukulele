@@ -13,23 +13,23 @@ const dfns = require('./definitions.js');
 // openStringNotes
 
 function getNote(notesArray) {
-	return (fret, i) => {
-		const openIndex = notesArray.indexOf(dfns.openStringNotes[i]);
-		const frettedNoteIndex = (openIndex + parseInt(fret, 10)) % 12;
-		return notesArray[frettedNoteIndex];
-	};
+  return (fret, i) => {
+    const openIndex = notesArray.indexOf(dfns.openStringNotes[i]);
+    const frettedNoteIndex = (openIndex + parseInt(fret, 10)) % 12;
+    return notesArray[frettedNoteIndex];
+  };
 }
 
 // This is looping through each string twice.
 // TODO: only loop once. The indices are the same for each array.
 function getNotesFromFrets(frets) {
-	if (!Array.isArray(frets)) {
-		frets = frets.replace('[', '').replace(']', '').replace(/s/g, '').split(',');
-	}
-	return {
-		notesSharps: frets.map(getNote(dfns.notesSharp)),
-		notesFlats: frets.map(getNote(dfns.notesFlat))
-	};
+  if (!Array.isArray(frets)) {
+    frets = frets.replace('[', '').replace(']', '').replace(/s/g, '').split(',');
+  }
+  return {
+    notesSharps: frets.map(getNote(dfns.notesSharp)),
+    notesFlats: frets.map(getNote(dfns.notesFlat))
+  };
 }
 
 module.exports = getNotesFromFrets;
