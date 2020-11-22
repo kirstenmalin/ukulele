@@ -1,69 +1,45 @@
-# ukulele
+# Ukulele Tools
 
-Notes
+This app displays song lyrics that have been annotated with chords to facilitate playing the songs on a ukulele.
 
-To do an npm install on the tablet, use the --no-bin-links option:
-	npm install --save svgdom --no-bin-links
+I started this project not long after I started learning to play the ukulele. When I looked up song chords, a lot of the songs I found either had mistakes in the chords or lyrics, or I wanted to change how I played the intro or the ending. I tried various apps and online tools, but none of them were quite what I wanted.
 
-- Make chords dark red
-- Make a spot at the bottom of each song for notes
-- Grab the chord images and make them sticky at the top - position: sticky
-- Handle minor keys in the key selection box
-    - second array? Or just detect a `m` in the key name and add it?
+## Running the song pages
 
-// flat ♭ U+266D
-// natural ♮ U+266E
-// sharp ♯ U+266F
+The app does not require a server, so just open `/src/index.html` in a browser.
 
-Ain't No Sunshine - Starts on E, key of Am
-Blue Savannah - Starts on D, key of D
-Brown-Eyed Girl - starts on D, key of Fm
-  - need to figure out ending
-  - Some of the chords are wrong
-Build Me Up Buttercup - Starts on C, key of C
-Everything - when it starts on chord C, start singing on E
-Hey Jealousy - (transposed down 4 steps so that chords are F, G, Am, C) - Start one half step below the first chord
-Holding Out for a Hero - starts on E; some of the Ams are supposed to be Fs
-I Can't Help Falling in Love with You - starts on C, key of C
-I Know You're Out There Somewhere - starts on G, key of G
-I Think We're Alone Now - starts on E, key of C
-Let It Be - starts on G, key of C
-Whiter Shade of Pale - starts on G, key of C
+To run the app on a server, do `npm install`, then `npm start`. Then open up `localhost:5000/`.
 
+The server is useful, for example, when running the files from an SD card on an Android tablet. HTML files saved in internal memory can be opened directly in a browser, and all the styles and scripts work, but that is not the case when the files are saved to a separate SD card.
 
-Try word-spacing: 0.5ch on the text, but not the chords. Or does it matter, since there are no spaces in the chords?
+Since most of the code has been developed on an Android tablet, meaning I can't pull up the devtools in the browser, errors and log messages appear within the pages themselves.
 
-  ukulele
-    create a script that generates svgs for each key given the relationships between notes in a type of chord
-		
-		need to take into account what notes each string can makes
-		
-		need to make it generate the correct known chord patterns
-		
-		maybe allow option to generate alternate versions of the same chord
-		
-		X I can run a server from inside Termux
-			SDcard/Android/com.termux/files/ukulele
-		X Need to copy the ukulele folder to the Termux folder
-		X Then create a git repo out of it
-		X Push the repo to Github as a private repo
-			I may need to create the private repo first and add it as a remote
-		X Then I can add a package.json and npm install express
-		X Create a small server to serve up my static files
-		X Load the files in the browser via localhost:port
-		X Change Dropsync to sync to the Termux folder instead of the Documents folder (or files or whatever)
-		Then I'll have the ability to commit in MGit and push to Github, sync to Dropbox, run in Termux, edit in QuickEdit, and load in Chrome/Firefox
-		X Need to buy add-free version of QuickEdit (I think it's like 3 bucks)
-		X Need to figure out dark mode for QuickEdit
+## Using the song pages
 
+The index page has links to all of the songs and a shuffle button to shuffle the list order.
 
+Each song page has lyrics annotated with chords and displays charts for each chord used in the song. There is a select box that lists the current key. Just select a new key, and the chords will change accordingly. There is also a set of radio buttons to control the scroll speed. The lower the number, the faster the scroll. Tapping anywhere in the page other than the scroll options stops the scrolling.
 
+Modifying the chords themselves and adding new songs is a manual process of editing the html files directly. I plan to make a UI where I can edit the chords directly in the browser, but that is not implemented yet.
 
+To change or add chords in a song, open the corresponding html file in `/src/songs`. Each chord is in `<b>` tag with a class `chord`. Just change the contents of the `<b>` tag, or add a new one wherever you want.
 
+To add a new song, copy `/src/songs/template.html` into a new file in the `/songs` directory. Add a link to the new file in `/src/index.html`. Then type or paste in the lyrics and add chords.
 
+## Chord calculation scripts
 
+`npm run calc [name of chord]` will return the notes that are in the given chord.
 
+## Future plans
 
+- UI to enable editing chords from within the browser
+-- This will probably require setting up a database, but I might try writing the data to a json file. The benefit there is that the files would be more portable, so I could run it off of my computer, tablet, or phone.
 
+- Generate svgs of the chords
+-- Try generating them dynamically
+-- Save off the result so that they don't have to be re-generated each time
 
-
+- Dynamically determine the fingering for each chord
+-- In order to generate the chord svgs, I need to know where to put the fingering for each chord
+-- I could do this manually, but this is more an exercise to see whether I can calculate the same fingering that is common for a given chord
+-- This is in progress
