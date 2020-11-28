@@ -1,4 +1,4 @@
-'use strict';
+import chordData from '/chordData.json';
 
 const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
@@ -17,7 +17,7 @@ const keysWithFlat = ['F', 'B♭', 'E♭', 'A♭', 'D♭', 'G♭', 'Dm', 'Gm', '
 let scrollTimer;
 
 // ******************************** Utilities
-function escape(msg) {
+function escapeHTML(msg) {
   if (!msg) {
     return false;
   }
@@ -25,7 +25,7 @@ function escape(msg) {
 }
 
 function showError(err) {
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escape(err.stack) || escape(err)}</p>`);
+  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
 }
 
 function log(msg) {
@@ -34,7 +34,7 @@ function log(msg) {
     document.body.insertAdjacentHTML('beforeend', '<section class="log"></section>');
     log = document.querySelector('.log');
   }
-  log.insertAdjacentHTML('beforeend', `<p>${escape(msg)}</p>`);
+  log.insertAdjacentHTML('beforeend', `<p>${escapeHTML(msg)}</p>`);
 }
 
 function cleanChord(chord) {
