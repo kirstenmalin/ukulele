@@ -1,4 +1,4 @@
-import chordData from '/chordData.json';
+import allChordsData from '/allChordsData.js';
 
 const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
@@ -26,6 +26,7 @@ function escapeHTML(msg) {
 
 function showError(err) {
   document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
+  console.error(err);
 }
 
 function log(msg) {
@@ -185,11 +186,41 @@ function populateKeySelect() {
   }
 }
 
+function fingerNumberTemplate(fingerNumber) {
+  return `<div class="fingerNumber">${fingerNumber}</div>`;
+}
+
+function fretTemplate(fingerNumber) {
+  return `<div class="fret">${fingerNumber && fingerNumberTemplate(fingerNumber)}</div>`;
+}
+
+function stringTemplate(stringData) {
+  let frets = '';
+  for (let i = 1; i <= 4; i++) {
+    frets += fretTemplate(i === stringData.fret ? stringData.finger : '');
+  }
+  return `<div class="string">${frets}<div class="noteName">${stringData.note}</div></div>`;
+}
+
+function fretboardTemplate(chordName) {
+  const chordData = allChordsData[chordName];
+  const strings = chordData.chord.reduce((acc, stringData) => {
+    return acc + stringTemplate(stringData);
+  }, '');
+
+  return `<div class="fretboard">${strings}</div>`;
+
+}
+
 function setChordImages() {
   const chordList = getChordList();
   log(`chordList: ${chordList}`);
   const chordListItems = chordList.reduce((acc, chord) => {
-    return acc + `<li><img src="../chords/${chord}.svg"></li>`;
+    return acc + `<li>
+      <img src="../chords/${chord}.svg">
+      <div class="chordName">${chord}</div>
+      ${fretboardTemplate(chord)}
+    </li>`;
   }, '');
   document.querySelector('.chordList').innerHTML = chordListItems;
 }

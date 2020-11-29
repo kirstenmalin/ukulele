@@ -6,11 +6,7 @@ I started this project not long after I started learning to play the ukulele. Wh
 
 ## Running the song pages
 
-The app does not require a server, so just open `/src/index.html` in a browser.
-
-To run the app on a server, do `npm install`, then `npm start`. Then open up `localhost:5000/`.
-
-The server is useful, for example, when running the files from an SD card on an Android tablet. HTML files saved in internal memory can be opened directly in a browser, and all the styles and scripts work, but that is not the case when the files are saved to a separate SD card.
+To start the server, do `npm install`, then `npm start`. Then open up `localhost:5000/`.
 
 Since most of the code has been developed on an Android tablet, meaning I can't pull up the devtools in the browser, errors and log messages appear within the pages themselves.
 

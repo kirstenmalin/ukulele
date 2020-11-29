@@ -1,7 +1,9 @@
+@import "./fretStyles.css";
+
 :root {
   --spacing: 16px;
-  --half-spacing: 8px;
-  --negative-spacing: -16px;
+  --half-spacing: calc(var(--spacing) / 2);
+  --negative-spacing: calc(0px - var(--spacing));
 }
 
 body {
@@ -75,6 +77,8 @@ p .chord.spaced:first-child,
   white-space: pre;
 }
 
+/* List of chords */
+
 .chordList {
   background-color: white;
   /* box-shadow: 0 2px 2px 1px #999; */
@@ -95,6 +99,7 @@ p .chord.spaced:first-child,
   max-height: 80px;
 }
 
+/* Scroll Controls */
 .scrollControls {
   display: inline-block;
   float: right;
@@ -119,6 +124,7 @@ p .chord.spaced:first-child,
   margin: 0 var(--half-spacing) 0 0;
 }
 
+/* Comments */
 aside {
   border-top: solid 1px #999;
 }
@@ -139,6 +145,7 @@ article aside {
   padding: 0;
 }
 
+/* Logging */
 .log,
 .error {
   border-radius: 4px;
