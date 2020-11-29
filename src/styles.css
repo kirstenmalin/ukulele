@@ -82,6 +82,8 @@ p .chord.spaced:first-child,
 .chordList {
   background-color: white;
   /* box-shadow: 0 2px 2px 1px #999; */
+  display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   margin: 8px -8px 4px;
   padding: 8px 0 0;
@@ -92,11 +94,7 @@ p .chord.spaced:first-child,
 
 .chordList li {
   display: inline-block;
-  margin: 0 4px;
-}
-
-.chordList img {
-  max-height: 80px;
+  margin: 0 4px 4px;
 }
 
 /* Scroll Controls */

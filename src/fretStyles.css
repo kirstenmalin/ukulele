@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  height: calc(5 * var(--fret-height));
+  height: calc(var(--fret-height) * 5);
 }
 
 .fretboard .string {
@@ -29,11 +29,11 @@
 .fretboard .fret {
   border-bottom: solid 1px #555;
   border-top: solid 1px #555;
+  height: var(--fret-height);
 }
 
 .fretboard .fret,
 .fretboard .noteName {
-  height: var(--fret-height);
   margin: 0 var(--fret-negative-margin);
 }
 
@@ -52,7 +52,9 @@
 .fretboard .noteName {
   background-color: white;
   font-size: calc(var(--fret-width) * 0.6);
-  line-height: calc(var(--fret-width) * 0.7);
+  /*height: var(--finger-number-width);*/
+  /*line-height: calc(var(--fret-width) * 0.7);*/
+  line-height: var(--fret-width);
   text-align: center;
 }
 
