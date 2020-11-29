@@ -217,7 +217,6 @@ function setChordImages() {
   log(`chordList: ${chordList}`);
   const chordListItems = chordList.reduce((acc, chord) => {
     return acc + `<li>
-      <img src="../chords/${chord}.svg">
       <div class="chordName">${chord}</div>
       ${fretboardTemplate(chord)}
     </li>`;
