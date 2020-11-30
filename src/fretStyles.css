@@ -8,6 +8,7 @@
 
 .chordList .chordName {
   color: #900;
+  font-size: var(--fret-width);
   text-align: center;
 }
 

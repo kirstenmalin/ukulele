@@ -2,24 +2,9 @@
 
 ## Development
 
-To do an npm install on the tablet, use the --no-bin-links option:
-  npm install --save svgdom --no-bin-links
+To do an npm install on the tablet, use the `--no-bin-links` option because Android doesn't support symlinks:
+```npm install --save [packagename] --no-bin-links```
 
-- Make chords dark red
-- Make a spot at the bottom of each song for notes
-- Grab the chord images and make them sticky at the top - position: sticky
-- Handle minor keys in the key selection box
-    - second array? Or just detect a `m` in the key name and add it?
-
-Try word-spacing: 0.5ch on the text, but not the chords. Or does it matter, since there are no spaces in the chords?
-
-create a script that generates svgs for each key given the relationships between notes in a type of chord
-
-need to take into account what notes each string can makes
-
-need to make it generate the correct known chord patterns
-
-maybe allow option to generate alternate versions of the same chord
 
 ## Songs and chords
 
