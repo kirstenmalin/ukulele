@@ -1,7 +1,6 @@
 import { log, showError } from './utils.js';
 import createChordFrets from './createChordFrets.js';
 
-
 const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
 const majorKeys = ['A♭', 'A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G'];
@@ -153,7 +152,12 @@ function populateKeySelect() {
   }
   const keys = selectBox.dataset.initial.indexOf('m') === -1 ? majorKeys : minorKeys;
   keys.forEach((key) => {
-    selectBox.insertAdjacentHTML('beforeend', `<option value="${key}"${selectBox.dataset.initial === key ? ' selected' : ''}>${key}</option>`);
+    selectBox.insertAdjacentHTML(
+      'beforeend',
+      `<option value="${key}"${selectBox.dataset.initial === key ? ' selected' : ''}>
+        ${key}
+      </option>`
+    );
   });
   selectBox.dataset.current = selectBox.dataset.initial;
   selectBox.addEventListener('change', changeKey);
@@ -171,7 +175,7 @@ function setChordImages() {
   const chordList = getChordList();
   log(`chordList: ${chordList}`);
   const chordListItems = chordList.reduce((acc, chord) => {
-    return acc + createChordFrets(chord);
+    return acc + createChordFrets(chord, true);
   }, '');
   document.querySelector('.chordList').innerHTML = chordListItems;
 }

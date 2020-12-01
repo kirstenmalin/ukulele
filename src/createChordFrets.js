@@ -20,17 +20,18 @@ function stringTemplate(stringData) {
     </div>`;
 }
 
-export default function createChordFrets(chordName) {
+export default function createChordFrets(chordName, useLI) {
+  const wrapperType = useLI ? 'li' : 'div';
   const chordData = allChordsData[chordName];
   const strings = chordData.chord.reduce((acc, stringData) => {
     return acc + stringTemplate(stringData);
   }, '');
 
-  return `<li>
+  return `<${wrapperType} class="chordFrets">
       <div class="chordName">${chordName}</div>
         <div class="fretboard">
           ${chordData.offset ? `<span class="offset">${chordData.offset}</span>` : ''}
           ${strings}
         </div>
-    </li>`;
+    </${wrapperType}>`;
 }

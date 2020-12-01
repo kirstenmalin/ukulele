@@ -1,13 +1,15 @@
-.chordList {
+/* Scale whole chord fret by changing the value of --fret-half-width */
+
+.chordFrets {
   --fret-half-width: 8px;
   --fret-width: calc(var(--fret-half-width) * 2);
   --fret-negative-margin: calc(-1px - var(--fret-half-width));
   --fret-height: calc(var(--fret-width) * 1.2);
   --finger-number-size: calc(var(--fret-width) * 0.8);
-  --fret-border: solid 1px #555;
+  --fret-border: 1px solid #555;
 }
 
-.chordList .chordName {
+.chordFrets .chordName {
   color: #900;
   font-size: var(--fret-width);
   line-height: calc(var(--fret-width) * 1.1);
