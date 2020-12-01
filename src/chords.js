@@ -1,12 +1,13 @@
-import allChordsData from '/allChordsData.js';
 import { log, showError } from './utils.js';
+import createChordFrets from './createChordFrets.js';
+
 
 const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
 const majorKeys = ['A♭', 'A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G'];
 const minorKeys = ['Am', 'B♭m', 'Bm', 'Cm', 'C♯m', 'Dm', 'E♭m', 'Em', 'Fm', 'F♯m', 'Gm', 'G♯m'];
 const keysWithSharp = ['G', 'D', 'A', 'E', 'B', 'Em', 'Bm', 'F♯m', 'C♯m', 'G♯m'];
-const keysWithFlat = ['F', 'B♭', 'E♭', 'A♭', 'D♭', 'G♭', 'Dm', 'Gm', 'Cm', 'Fm', 'B♭m', 'E♭m'];
+// const keysWithFlat = ['F', 'B♭', 'E♭', 'A♭', 'D♭', 'G♭', 'Dm', 'Gm', 'Cm', 'Fm', 'B♭m', 'E♭m'];
 
 // flat ♭ U+266D
 // natural ♮ U+266E
@@ -166,40 +167,11 @@ function populateKeySelect() {
   }
 }
 
-function fingerNumberTemplate(fingerNumber) {
-  return `<div class="fingerNumber">${fingerNumber}</div>`;
-}
-
-function fretTemplate(fingerNumber) {
-  return `<div class="fret">${fingerNumber && fingerNumberTemplate(fingerNumber)}</div>`;
-}
-
-function stringTemplate(stringData) {
-  let frets = '';
-  for (let i = 1; i <= 4; i++) {
-    frets += fretTemplate(i === stringData.fret ? stringData.finger : '');
-  }
-  return `<div class="string">${frets}<div class="noteName">${stringData.note}</div></div>`;
-}
-
-function fretboardTemplate(chordName) {
-  const chordData = allChordsData[chordName];
-  const strings = chordData.chord.reduce((acc, stringData) => {
-    return acc + stringTemplate(stringData);
-  }, '');
-
-  return `<div class="fretboard">${strings}</div>`;
-
-}
-
 function setChordImages() {
   const chordList = getChordList();
   log(`chordList: ${chordList}`);
   const chordListItems = chordList.reduce((acc, chord) => {
-    return acc + `<li>
-      <div class="chordName">${chord}</div>
-      ${fretboardTemplate(chord)}
-    </li>`;
+    return acc + createChordFrets(chord);
   }, '');
   document.querySelector('.chordList').innerHTML = chordListItems;
 }
