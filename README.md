@@ -27,24 +27,3 @@ To add a new song, copy `/src/songs/template.html` into a new file in the `/song
 ## Chord calculation scripts
 
 `npm run calc [name of chord]` will return the notes that are in the given chord.
-
-## Future plans
-
-- UI to enable editing chords from within the browser
-  - This will probably require setting up a database, but I might try writing the data to a json file. The benefit there is that the files would be more portable, so I could run it off of my computer, tablet, or phone.
-
-- Generate svgs of the chords
-  - Try generating them dynamically
-  - Save off the result so that they don't have to be re-generated each time
-
-- Dynamically determine the fingering for each chord
-  - In order to generate the chord svgs, I need to know where to put the fingering for each chord
-  - I could do this manually, but this is more an exercise to see whether I can calculate the same fingering that is common for a given chord
-  - Create a script that generates svgs for each key given the relationships between notes in a type of chord
-  - need to take into account what notes each string can makes
-  - need to make it generate the correct known chord patterns
-  - maybe allow option to generate alternate versions of the same chord
-  - This is in progress - chordCalc script is the first step
-
-- Try word-spacing: 0.5ch on the text, but not the chords. Or does it matter, since there are no spaces in the chords?
-  - Some chord names are quite wide, and sometimes they are used during words that are short. I want to avoid adding non-breakings spaces in the text if I can, which is how I've been mitigating the issue.
