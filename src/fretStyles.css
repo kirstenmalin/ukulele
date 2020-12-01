@@ -4,6 +4,7 @@
   --fret-negative-margin: calc(-1px - var(--fret-half-width));
   --fret-height: calc(var(--fret-width) * 1.2);
   --finger-number-size: calc(var(--fret-width) * 0.8);
+  --fret-border: solid 1px #555;
 }
 
 .chordList .chordName {
@@ -22,16 +23,14 @@
 }
 
 .fretboard .string {
-  background-color: #f003;
-  border-left: 1px solid #555;
+  border-left: var(--fret-border);
   margin: 0 var(--fret-half-width);
   overflow: visible;
   width: 0;
 }
 
 .fretboard .fret {
-  border-bottom: solid 1px #555;
-  border-top: solid 1px #555;
+  border-top: var(--fret-border);
   height: var(--fret-height);
 }
 
@@ -48,15 +47,13 @@
   margin-right: 0;
 }
 
-.fretboard .fret:not(:first-child) {
-  margin-top: -1px;
+.fretboard .fret:nth-child(4) {
+  border-bottom: var(--fret-border);
 }
 
 .fretboard .noteName {
   background-color: white;
   font-size: calc(var(--fret-width) * 0.6);
-  /*height: var(--finger-number-width);*/
-  /*line-height: calc(var(--fret-width) * 0.7);*/
   line-height: var(--fret-width);
   text-align: center;
 }
