@@ -1,26 +1,7 @@
-// ******************************** Utilities
+import { showError } from './utils.js';
+
 const songList = document.querySelector('.songList');
 const shuffleBtn = document.querySelector('button.shuffle');
-
-function escapeHTML(msg) {
-  if (!msg) {
-    return false;
-  }
-  return msg.toString().replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-function showError(err) {
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
-}
-
-function log(msg) {
-  let log = document.querySelector('.log');
-  if (!log) {
-    document.body.insertAdjacentHTML('afterbegin', '<section class="log"></section>');
-    log = document.querySelector('.log');
-  }
-  log.insertAdjacentHTML('beforeend', `<p>${escapeHTML(msg)}</p>`);
-}
 
 // ******************************** Maintain Shuffle Order
 function getOrder() {
@@ -33,7 +14,7 @@ function getOrder() {
 
 function setSongOrder(order) {
   const oldSongs = Array.from(songList.querySelectorAll('li'));
-  order.reverse().forEach((i, j, k) => {
+  order.reverse().forEach((i) => {
     const currentSong = oldSongs.find((song) => {
       return song.dataset.index === i;
     });

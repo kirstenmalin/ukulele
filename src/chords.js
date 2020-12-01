@@ -1,4 +1,5 @@
 import allChordsData from '/allChordsData.js';
+import { log, showError } from './utils.js';
 
 const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
 const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
@@ -17,27 +18,6 @@ const keysWithFlat = ['F', 'B♭', 'E♭', 'A♭', 'D♭', 'G♭', 'Dm', 'Gm', '
 let scrollTimer;
 
 // ******************************** Utilities
-function escapeHTML(msg) {
-  if (!msg) {
-    return false;
-  }
-  return msg.toString().replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-function showError(err) {
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
-  console.error(err);
-}
-
-function log(msg) {
-  let log = document.querySelector('.log');
-  if (!log) {
-    document.body.insertAdjacentHTML('beforeend', '<section class="log"></section>');
-    log = document.querySelector('.log');
-  }
-  log.insertAdjacentHTML('beforeend', `<p>${escapeHTML(msg)}</p>`);
-}
-
 function cleanChord(chord) {
   return chord.replace('<i>', '').replace('</i>', '');
 }
