@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Take On Me - A-Ha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="home"><a href="../index.html">← Index</a></nav>
+    <h1>Take On Me - A-Ha</h1>
+
+    <fieldset class="scrollControls">
+      <legend>Scroll Speed</legend>
+      <label><input type="radio" name="scrollSpeed" value="off" checked>Off</label>
+    </fieldset>
+
+    <!-- Set key data attributes -->
+    <select class="key" data-initial="" data-preferred=""></select>
+    <!-- one li per chord used, which contains an image of the chord -->
+    <ul class="chordList"></ul>
+    <!-- flat ♭ U+266D | natural ♮ U+266E | sharp ♯ U+266F -->
+    <section>Start singing on: &nbsp; <b class="chord"></b><img class="note" data-note=""></section>
+
+    <article><!-- the article contains the whole song; each stanza is a section, each line is a p -->
+      <section class="spaced">
+        <!-- Intro chords -->
+        <p><b class="chord"></b></p>
+      </section>
+
+      <aside class="pre">
+           Dm    G       C     F
+        A|-00---|---2235|333--|000--0-|
+        E|---1--|333----|---30|---33-3|
+        C|----22|-------|-----|-------|
+        G|------|-------|-----|-------|
+
+           Dm    G       C     F
+        A|-00---|---2235|333--|000--0-|
+        E|---1--|333----|---30|---33-3|
+        C|----22|-------|-----|-------|
+        G|------|-------|-----|-------|
+
+           Dm    G       Dm    G
+        A|-00---|---2235|3330-|000--0-|
+        E|---1--|333----|----1|---33-3|
+        C|----22|-------|-----|-------|
+        G|------|-------|-----|-------|
+        </aside>
+      <section>
+        <p><b class="chord">Dm</b>Talking away<b class="chord spaced">G</b></p>
+        <p><b class="chord">C</b>I don't know what <b class="chord spaced">F</b>I'm to say</p>
+        <p>I'll <b class="chord">Dm</b>say it any<b class="chord">G</b>way</p>
+        <p><b class="chord">C</b>Today isn't my <b class="chord">F</b>day to find you</p>
+        <p><b class="chord">Dm</b>Shying away <b class="chord spaced">G</b></p>
+        <p><b class="chord spaced">Am</b>I'll be coming for your <b class="chord">F</b>love, OK?</p>
+      </section>
+      
+      <section>
+        <p><b class="chord">C</b>Take <b class="chord">G</b>on <b class="chord">Am</b>me <b class="chord">F</b>(take on me)</p>
+        <p>Take 	me 	on 	(take on me)
+I'll 	be 	gone 	in a day or
+Two
+      </section>
+
+      <section>
+So needless to say 	
+I'm odds and ends
+But that's me 	stumbling away	
+Slowly learning that 	life is OK
+Say after me 	
+It's no better to be 	safe than sorry
+Take 	on 	me 	(take on me)
+Take 	me 	on 	(take on me)
+I'll 	be 	gone 	in a day or
+Two 	 	 	
+ 	 	 	 	 	
+Oh, 	things that you say 	
+Is it a life or 	just to play my
+worries away? 	
+You're 	all the things I've 	got to remember
+You're 	shying away 	
+I'll be coming for you 	anyway
+Take 	on 	me 	(take on me)
+Take 	me 	on 	(take on me)
+I'll 	be 	gone 	in a
+day (take 	on 	me) 	(take on me)
+Take 	me 	on 	(take on me)
+I'll 	be 	gone 	in a
+day 	 	 	
+
+      </section>
+    </article>
+
+    <aside>
+      <h3>Notes</h3>
+      <p>
+        For strumming anotation: ⬇⬆
+      </p>
+    </aside>
+    <script type="module" src="../chords.js"></script>
+  </body>
+</html>
