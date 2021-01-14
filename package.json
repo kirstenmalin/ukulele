@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/index.js",
     "calc": "node ./server/do.js --chord-calc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "@svgdotjs/svg.js": "^3.0.16",
     "express": "^4.17.1",
     "svgdom": "0.1.8"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
   }
 }
