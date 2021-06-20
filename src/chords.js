@@ -17,7 +17,7 @@ const keysWithSharp = ['G', 'D', 'A', 'E', 'B', 'Em', 'Bm', 'F♯m', 'C♯m', 'G
 
 let scrollTimer;
 
-// ******************************** Utilities
+// ******************************** Chord Utilities
 function cleanChord(chord) {
   return chord.replace('<i>', '').replace('</i>', '');
 }
@@ -165,7 +165,10 @@ function populateKeySelect() {
   // do it after setChordImages
   // so that we log out the original chords before
   // showing the preferred ones
-  if (selectBox.dataset.preferred && selectBox.dataset.preferred != '') {
+  if (selectBox.dataset.preferred &&
+    selectBox.dataset.preferred !== '' &&
+    selectBox.dataset.preferred !== selectBox.dataset.current
+  ) {
     selectBox.value = selectBox.dataset.preferred;
     changeKey();
   }
@@ -193,7 +196,7 @@ function setNoteImages() {
 function setupScroll() {
   const scrollControls = document.querySelector('.scrollControls');
   // const speeds = [1, 1.5, 1.8, 2, 2.5, 3, 4, 5];
-  const speeds = [250, 200, 175, 150, 125, 100, 75, 50, 30, 20, 10];
+  const speeds = [200, 175, 150, 125, 100, 90, 75, 50, 30, 20,];
   speeds.forEach((speed) => {
     scrollControls.insertAdjacentHTML('beforeend',
       `<label><input type="radio" name="scrollSpeed" value="${speed}">${speed}</label>`);

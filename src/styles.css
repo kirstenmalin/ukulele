@@ -58,12 +58,16 @@ p.spaced,
   top: var(--negative-spacing);
 }
 
-p.spaced .chord:first-child,
-p .chord.spaced:first-child,
-.spaced p .chord:first-child {
-  text-align: left;
+.chord.spaced:first-child,
+.spaced .chord:first-child {
   margin: 0 var(--half-spacing) 0 0;
   padding: 0 var(--half-spacing) 0 0;
+}
+
+.chord.spaced:last-child,
+.spaced .chord:last-child {
+  margin: 0 0 0 var(--half-spacing);
+  padding: 0 0 0 var(--half-spacing);
 }
 
 .chord i {

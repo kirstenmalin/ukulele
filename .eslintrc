@@ -8,7 +8,7 @@
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
-    "sourceType": "module"
+    "sourceType": "script"
   },
   "rules": {
     "arrow-parens": [
@@ -53,7 +53,7 @@
     "max-len": [
       "error",
       {
-        "code": 100
+        "code": 150
       }
     ],
     "no-bitwise": [
