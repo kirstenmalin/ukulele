@@ -6,7 +6,7 @@
 // notesSharps
 // notesFlats
 
-const dfns = require('./definitions.js');
+const dfns = require('../definitions.js');
 
 // notesSharp
 // notesFlat

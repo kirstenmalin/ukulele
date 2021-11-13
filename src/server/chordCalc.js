@@ -1,4 +1,4 @@
-const dfns = require('./definitions.js');
+const dfns = require('../definitions.js');
 
 function logBadChord (chordName) {
   console.log('Invalid chord: ', chordName);

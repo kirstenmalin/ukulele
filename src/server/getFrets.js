@@ -1,4 +1,4 @@
-const dfns = require('./definitions.js');
+const dfns = require('../definitions.js');
 
 //
 /*

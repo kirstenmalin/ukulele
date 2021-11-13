@@ -1,12 +1,12 @@
+import {
+  notesSharp,
+  notesFlat,
+  majorKeys,
+  minorKeys,
+  keysWithSharp
+} from './definitions.js';
 import { log, showError } from './utils.js';
 import createChordFrets from './createChordFrets.js';
-
-const notesSharp = ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯'];
-const notesFlat = ['A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭'];
-const majorKeys = ['A♭', 'A', 'B♭', 'B', 'C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G'];
-const minorKeys = ['Am', 'B♭m', 'Bm', 'Cm', 'C♯m', 'Dm', 'E♭m', 'Em', 'Fm', 'F♯m', 'Gm', 'G♯m'];
-const keysWithSharp = ['G', 'D', 'A', 'E', 'B', 'Em', 'Bm', 'F♯m', 'C♯m', 'G♯m'];
-// const keysWithFlat = ['F', 'B♭', 'E♭', 'A♭', 'D♭', 'G♭', 'Dm', 'Gm', 'Cm', 'Fm', 'B♭m', 'E♭m'];
 
 // flat ♭ U+266D
 // natural ♮ U+266E
@@ -196,7 +196,7 @@ function setNoteImages() {
 function setupScroll() {
   const scrollControls = document.querySelector('.scrollControls');
   // const speeds = [1, 1.5, 1.8, 2, 2.5, 3, 4, 5];
-  const speeds = [200, 175, 150, 125, 100, 90, 75, 50, 30, 20,];
+  const speeds = [200, 175, 150, 125, 100, 90, 75, 50, 30, 20];
   speeds.forEach((speed) => {
     scrollControls.insertAdjacentHTML('beforeend',
       `<label><input type="radio" name="scrollSpeed" value="${speed}">${speed}</label>`);
