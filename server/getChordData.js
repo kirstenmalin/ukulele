@@ -2,8 +2,8 @@ const fs = require('fs');
 const { createSVGWindow } = require('svgdom');
 const { SVG, registerWindow } = require('@svgdotjs/svg.js');
 
-const window = createSVGWindow()
-registerWindow(window, window.document)
+const window = createSVGWindow();
+registerWindow(window, window.document);
 
 const filenames = fs.readdirSync('./src/chords');
 // console.log('filenames:', filenames);
@@ -30,7 +30,9 @@ chordFilenames.forEach((filename) => {
     const isClosedString = fretEl.node.style.visibility === 'visible';
     const fingerNumber = isClosedString ? finger.node.textContent : '';
     const transformValue = fretEl.node.getAttribute('transform');
-    const fret = parseInt(transformValue.slice(transformValue.lastIndexOf(',') + 1, -1), 10) / 20 + 1;
+    const fret = parseInt(
+      transformValue.slice(transformValue.lastIndexOf(',') + 1, -1), 10
+    ) / (20 + 1);
     console.log('fret:', fret);
     chordData[chordName].chord.push({
       finger: fingerNumber,

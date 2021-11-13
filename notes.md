@@ -25,6 +25,26 @@ For the in-browser editing:
 		Have it do a `git commit` with a message that indicates what file was changed.
 		(Make sure to `git add [filename]` first)
 		How do I call command line functions from node?
+		
+### Code notes
+
+To set the value of a css variable via js:
+```css
+
+:root {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+```
+
+```js
+let root = document.documentElement;
+
+root.addEventListener("mousemove", e => {
+  root.style.setProperty('--mouse-x', e.clientX + "px");
+  root.style.setProperty('--mouse-y', e.clientY + "px");
+});```
+
 
 
 ## Songs and chords

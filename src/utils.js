@@ -6,7 +6,10 @@ export function escapeHTML(msg) {
 }
 
 export function showError(err) {
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`);
+  document.body.insertAdjacentHTML(
+    'afterbegin',
+    `<p class="error">${escapeHTML(err.stack) || escapeHTML(err)}</p>`
+  );
   console.error(err);
 }
 
