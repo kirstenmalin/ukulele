@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Rose - Bette Midler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="home"><a href="../index.html">← Index</a></nav>
+    <h1>The Rose - Bette Midler</h1>
+
+    <fieldset class="scrollControls">
+      <legend>Scroll Speed</legend>
+      <label><input type="radio" name="scrollSpeed" value="off" checked>Off</label>
+    </fieldset>
+
+    <!-- Set key data attributes -->
+    <select class="key" data-initial="C" data-preferred=""></select>
+    <!-- one li per chord used, which contains an image of the chord -->
+    <ul class="chordList"></ul>
+    <!-- flat ♭ U+266D | natural ♮ U+266E | sharp ♯ U+266F -->
+    <section>Start singing on: &nbsp; <b class="chord">C</b><img class="note" data-note="C"></section>
+
+    <article><!-- the article contains the whole song; each stanza is a section, each line is a p -->
+      <section class="spaced">
+        <!-- Intro chords -->
+        <p><b class="chord"></b></p>
+      </section>
+
+      <section>
+        <p>Some say <b class="chord">C</b>love, it is a <b class="chord">G</b>river, that <b class="chord">F</b>drowns the <b class="chord">G</b>tender <b class="chord">C</b>reed.</p>
+        <p>Some say <b class="chord">C</b>love, it is a <b class="chord">G</b>razor that <b class="chord">F</b>leaves your <b class="chord">G</b>soul to <b class="chord">C</b>bleed.</p>
+        <p>Some say <b class="chord">Em</b>love it is a <b class="chord">Am</b>hunger, an <b class="chord">F</b>endless aching <b class="chord">G</b>need</p>
+        <p>I say <b class="chord">C</b>love, it is a <b class="chord">G</b>flower and <b class="chord">F</b>you its <b class="chord">G</b>only <b class="chord">C</b>seed</p>
+      </section>
+
+      <section>
+        <p>It's the <b class="chord">C</b>heart afraid of <b class="chord">G</b>breaking</p>
+        <p>That <b class="chord">F</b>never <b class="chord">G</b>learns to <b class="chord">C</b>dance</p>
+        <p>It's the <b class="chord">C</b>dream afraid of <b class="chord">G</b>waking</p>
+        <p>That <b class="chord">F</b>never <b class="chord">G</b>takes a <b class="chord">C</b>chance</p>
+        <p>It's the <b class="chord">Em</b>one, who won't be <b class="chord">Am</b>taken</p>
+        <p>Who <b class="chord">F</b>cannot seem to <b class="chord">G</b>give</p>
+        <p>And the <b class="chord">C</b>soul afraid of <b class="chord">G</b>dying</p>
+        <p>That <b class="chord">F</b>never <b class="chord">G</b>learns to <b class="chord">C</b>live</p>
+      </section>
+
+      <section>
+        <p>When the <b class="chord">C</b>night has been too <b class="chord">G</b>lonely</p>
+        <p>And the <b class="chord">F</b>road has <b class="chord">G</b>been too <b class="chord">C</b>long</p>
+        <p>And you <b class="chord">C</b>think that love is <b class="chord">G</b>only</p>
+        <p>For the <b class="chord">F</b>lucky <b class="chord">G</b>and the <b class="chord">C</b>strong</p>
+        <p>Just <b class="chord">Em</b>remember in the <b class="chord">Am</b>winter</p>
+        <p>Far <b class="chord">F</b>beneath the bitter <b class="chord">G</b>snows</p>
+        <p>Lies the <b class="chord">C</b>seed that with the <b class="chord">G</b>sun's love,</p>
+        <p>In the <b class="chord">F</b>spring be<b class="chord">G</b>comes the <b class="chord">C</b>rose</p>
+      </section>
+    </article>
+
+    <aside>
+      <h3>Notes</h3>
+      <p>
+        For strumming anotation: ⬇⬆
+      </p>
+    </aside>
+    <script type="module" src="../chords.js"></script>
+  </body>
+</html>
