@@ -104,7 +104,9 @@ p.spaced,
 }
 
 .chord.spaced:first-child,
-.spaced .chord:first-child {
+.spaced .chord:first-child,
+.chord.spaced:first-child:last-child,
+.spaced .chord:first-child:last-child {
   margin: 0 var(--half-spacing) 0 0;
   padding: 0 var(--half-spacing) 0 0;
 }
