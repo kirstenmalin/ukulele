@@ -13,7 +13,7 @@
   --error-background-color: #fcc;
   --error-border-color: #900;
   --font-color: #111;
-  --link-color: initial;
+  --link-color: -webkit-link;
   --log-background-color: #ddf;
   --log-border-color: #009;
   --scroll-control-bg-color: #f6f3ff;
