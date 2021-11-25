@@ -60,11 +60,16 @@ function shuffleSongs() {
   }
 }
 
+function setNumSongs(numSongs) {
+  document.getElementById('numSongs').innerHTML = numSongs;
+}
+
 function setIndices() {
   const songs = Array.from(songList.querySelectorAll('li'));
   songs.forEach((song, i) => {
     song.dataset.index = i;
   });
+  setNumSongs(songs.length);
 }
 
 // ******************************** Initialization
