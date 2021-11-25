@@ -4,11 +4,56 @@
   --spacing: 16px;
   --half-spacing: calc(var(--spacing) / 2);
   --negative-spacing: calc(0px - var(--spacing));
+
+  --aside-border-color: #999;
+  --aside-font-color: green;
+  --background-color: #fff;
+  --chord-font-color: #900;
+  --chord-sharp-flat-color: #00f;
+  --error-background-color: #fcc;
+  --error-border-color: #900;
+  --font-color: #111;
+  --link-color: initial;
+  --log-background-color: #ddf;
+  --log-border-color: #009;
+  --scroll-control-bg-color: #f6f3ff;
+  --select-bg-color: initial;
+  --select-font-color: initial;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --aside-border-color: #999;
+    --aside-font-color: #3ffb3f;
+    --background-color: #322;
+    --chord-font-color: #f77;
+    --chord-sharp-flat-color: #bbf;
+    --error-background-color: #822;
+    --error-border-color: var(--font-color);
+    --font-color: #fdd;
+    --link-color: #bbe;
+    --log-background-color: #228;
+    --log-border-color: #8282ef;
+    --scroll-control-bg-color: #5c2bad;
+    --select-bg-color: #595959;
+    --select-font-color: var(--font-color);
+  }
 }
 
 body {
+  background-color: var(--background-color);
+  color: var(--font-color);
   font-family: sans-serif;
   padding: 8px 8px 24px;
+}
+
+a, a:visited {
+  color: var(--link-color);
+}
+
+select {
+  background-color: var(--select-bg-color);
+  color: var(--select-font-color);
 }
 
 li {
@@ -40,7 +85,7 @@ p.spaced,
 }
 
 .chord {
-  color: #900;
+  color: var(--chord-font-color);
   font-weight: normal;
   letter-spacing: -1px;
   position: absolute;
@@ -74,7 +119,7 @@ p.spaced,
   font-weight: normal;
   font-style: normal;
   margin: 0 -3px;
-  color: blue;
+  color: var(--chord-sharp-flat-color);
 }
 
 .pre {
@@ -83,7 +128,7 @@ p.spaced,
 
 /* List of chords */
 .chordList {
-  background-color: white;
+  background-color: inherit;
   /* box-shadow: 0 2px 2px 1px #999; */
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +173,7 @@ tbody th {
 }
 
 .scrollControls label {
-  background-color: #f6f3ff;
+  background-color: var(--scroll-control-bg-color);
   display: block;
   padding: var(--half-spacing);
   margin: var(--half-spacing) 0;
@@ -140,7 +185,7 @@ tbody th {
 
 /* Comments */
 aside {
-  border-top: solid 1px #999;
+  border-top: solid 1px var(--aside-border-color);
 }
 
 aside h3 {
@@ -154,7 +199,7 @@ aside p {
 
 article aside {
   border: none;
-  color: green;
+  color: var(--aside-font-color);
   margin: var(--half-spacing) 0;
   padding: 0;
 }
@@ -169,13 +214,13 @@ article aside {
 }
 
 .error {
-  background-color: #fcc;
-  border: solid 1px #900;
+  background-color: var(--error-background-color);
+  border: solid 1px var(--error-border-color);
 }
 
 .log {
-  background-color: #ddf;
-  border: solid 1px #009;
+  background-color: var(--log-background-color);
+  border: solid 1px var(--log-border-color);
 }
 
 .log p {
@@ -186,7 +231,3 @@ article aside {
 .shuffle {
   float: right;
 }
-
-
-
-
