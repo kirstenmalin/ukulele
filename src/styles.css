@@ -100,6 +100,19 @@ p.spaced,
   margin: 0 4px 4px;
 }
 
+/* Table of chords */
+th, td {
+  padding: 8px;
+}
+
+thead th {
+  border-bottom: solid 1px royalblue;
+}
+
+tbody th {
+  border-right: solid 1px royalblue;
+}
+
 /* Scroll Controls */
 .scrollControls {
   display: inline-block;
