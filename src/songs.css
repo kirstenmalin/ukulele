@@ -1,0 +1,114 @@
+/** Styles for song pages **/
+
+li {
+  margin: 16px 0;
+}
+
+article {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: var(--spacing);
+  margin-right: 75px;
+  word-spacing: 2px;
+}
+
+section {
+  margin-bottom: 36px;
+  position: relative;
+}
+
+p {
+  margin: 12px 0;
+  padding-top: var(--spacing);
+  position: relative;
+}
+
+p.spaced,
+.spaced p {
+  height: 0;
+}
+
+.chord {
+  color: var(--chord-font-color);
+  font-weight: normal;
+  letter-spacing: -1px;
+  position: absolute;
+  top: 0;
+}
+
+.spaced.chord,
+.spaced .chord {
+  display: inline-block;
+  margin: 0 var(--half-spacing);
+  min-width: 1.75em;
+  padding: 0 var(--half-spacing);
+  position: relative;
+  text-align: center;
+  top: var(--negative-spacing);
+}
+
+.chord.spaced:first-child,
+.spaced .chord:first-child,
+.chord.spaced:first-child:last-child,
+.spaced .chord:first-child:last-child {
+  margin: 0 var(--half-spacing) 0 0;
+  padding: 0 var(--half-spacing) 0 0;
+}
+
+.chord.spaced:last-child,
+.spaced .chord:last-child {
+  margin: 0 0 0 var(--half-spacing);
+  padding: 0 0 0 var(--half-spacing);
+}
+
+.chord i {
+  font-weight: normal;
+  font-style: normal;
+  margin: 0 -3px;
+  color: var(--chord-sharp-flat-color);
+}
+
+.pre {
+  white-space: pre;
+}
+
+/* List of chords */
+.chordList {
+  background-color: inherit;
+  /* box-shadow: 0 2px 2px 1px #999; */
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 8px -8px 4px;
+  padding: 8px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.chordList li {
+  display: inline-block;
+  margin: 0 4px 4px;
+}
+
+/* Comments */
+aside {
+  border-top: solid 1px var(--aside-border-color);
+}
+
+aside h3 {
+  margin: var(--half-spacing) 0;
+}
+
+aside p {
+  margin: 0;
+  padding: 0;
+}
+
+article aside {
+  border: none;
+  color: var(--aside-font-color);
+  margin: var(--half-spacing) 0;
+  padding: 0;
+}
+
