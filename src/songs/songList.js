@@ -160,6 +160,11 @@ export const songList = [
     artist: 'Keane'
   },
   {
+    filename: 'somewhere-out-there.html',
+    title: 'Somewhere Out There',
+    artist: 'Linda Ronstadt and James Ingram'
+  },
+  {
     filename: 'summer-wind.html',
     title: 'The Summer Wind',
     artist: 'Frank Sinatra'

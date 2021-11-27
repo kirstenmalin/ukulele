@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Somewhere Out There - Linda Ronstadt and James Ingram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="home"><a href="../index.html">← Index</a></nav>
+    <h1>Somewhere Out There - Linda Ronstadt and James Ingram</h1>
+
+    <fieldset class="scrollControls">
+      <legend>Scroll Speed</legend>
+      <label><input type="radio" name="scrollSpeed" value="off" checked>Off</label>
+    </fieldset>
+
+    <!-- Set key data attributes -->
+    <select class="key" data-initial="C" data-preferred=""></select>
+    <!-- one li per chord used, which contains an image of the chord -->
+    <ul class="chordList"></ul>
+    <!-- flat ♭ U+266D | natural ♮ U+266E | sharp ♯ U+266F -->
+    <section>Start singing on: &nbsp; <b class="chord">E</b><img class="note" data-note="E"></section>
+
+    <article><!-- the article contains the whole song; each stanza is a section, each line is a p -->
+      <section class="spaced">
+        <!-- Intro chords -->
+        <p><b class="chord">C</b><b class="chord">Em</b><b class="chord">Am</b><b class="chord">F</b><b class="chord">F</b><b class="chord">Dm</b><b class="chord">Gsus4</b><b class="chord">G</b></p>
+      </section>
+
+      <section>
+        <p><b class="chord">C</b>Some<b class="chord">Em</b>where <b class="chord">Am</b>out <b class="chord">F</b>there be<b class="chord">C</b>neath the <b class="chord">Em7</b>pale moon<b class="chord">F</b>light</p>
+        <p><b class="chord">Dm</b>Some<b class="chord">G</b>one's thinking <b class="chord">C</b>of <b class="chord">Am</b>me and <b class="chord">F</b>loving <b class="chord">Am</b>me to<b class="chord">Gsus4</b>night <b class="chord spaced">G</b></p>
+      </section>
+
+      <section>
+        <p><b class="chord spaced">C</b>Some<b class="chord">Em</b>where <b class="chord">Am</b>out <b class="chord">F</b>there <b class="chord">C</b>someone's <b class="chord">Em7</b>saying a <b class="chord">F</b>prayer</p>
+        <p>That <b class="chord">Dm</b>we'll <b class="chord">G</b>find one <b class="chord">C</b>ano<b class="chord">Am</b>ther in that <b class="chord">F</b>big some<b class="chord">G</b>where out <b class="chord">C</b>there.</p>
+      </section>
+
+      <section>
+        <p>And <b class="chord">F</b>even though I <b class="chord">G</b>know how very <b class="chord">F</b>far apart we <b class="chord">G</b>are,</p>
+        <p>It <b class="chord">F</b>helps to think we <b class="chord">G</b>might be wishing <b class="chord">F</b>on the same bright <b class="chord">G</b>star,</p>
+      </section>
+
+      <section>
+        <p>And <b class="chord">A♭</b>when the night wind <b class="chord">B♭</b>starts to sing a <b class="chord">A♭</b>lonesome lulla<b class="chord">B♭</b>by,</p>
+        <p>It <b class="chord">A♭</b>helps to think we're <b class="chord">B♭</b>sleeping under<b class="chord">B♭7</b>neath the same big <b class="chord">G</b>sky.</p>
+      </section>
+
+      <section>
+        <p><b class="chord spaced">C</b>Some<b class="chord">Em</b>where <b class="chord">Am</b>out <b class="chord">F</b>there</p>
+        <p>If <b class="chord">C</b>love can <b class="chord">G</b>see us <b class="chord">F</b>through,</p>
+        <p><b class="chord">Dm</b>Then <b class="chord">G</b>we'll be to<b class="chord">C</b>get<b class="chord">Am</b>her,</p>
+        <p>Somewhere out <b class="chord">F</b>there,</p>
+        <p>Out <b class="chord">G</b>where dreams come <b class="chord">C</b>true <span class="spaced"><b class="chord">Em</b><b class="chord">Am</b><b class="chord">F</b><b class="chord">C</b><b class="chord">G</b><b class="chord">C</b></span></p>
+      </section>
+    </article>
+
+    <aside>
+      <h3>Notes</h3>
+      <p>
+        For strumming anotation: ⬇⬆
+      </p>
+    </aside>
+    <script type="module" src="../chords.js"></script>
+  </body>
+</html>
