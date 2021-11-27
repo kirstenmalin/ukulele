@@ -8,48 +8,13 @@
   </head>
   <body>
     <h1>Ukulele Song Chords</h1>
-    <button type="button" class="shuffle">Shuffle <span id="numSongs"></span> Songs</button>
-    <ul class="songList">
-      <li><a href="songs/a-little-respect.html">A Little Respect - Erasure</a></li>
-      <li><a href="songs/absolutely.html">Absolutely - Nine Days</a></li>
-      <li><a href="songs/aint-no-sunshine.html">Ain't No Sunshine - Bill Withers</a></li>
-      <li><a href="songs/blue-savannah.html">Blue Savannah - Erasure</a></li>
-      <li><a href="songs/brown-eyed-girl.html">Brown-Eyed Girl - Van Morrison</a></li>
-      <li><a href="songs/build-me-up-buttercup.html">Build Me Up Buttercup - The Foundations</a></li>
-      <li><a href="songs/come-fly-with-me.html">Come Fly With Me - Frank Sinatra</a></li>
-      <li><a href="songs/crash-and-burn.html">Crash and Burn - Savage Garden</a></li>
-      <li><a href="songs/crazy.html">Crazy - Gnarles Barkley</a></li>
-      <li><a href="songs/creep.html">Creep - Radiohead</a></li>
-      <li><a href="songs/dont-look-back-in-anger.html">Don't Look Back in Anger - Oasis</a></li>
-      <li><a href="songs/dont-say-your-love-is-killing-me.html">Don't Say Your Love is Killing Me - Erasure</a></li>
-      <li><a href="songs/eight-days-a-week.html">Eight Days a Week - The Beatles</a></li>
-      <li><a href="songs/eternal-flame.html">Eternal Flame - The Bangles</a></li>
-      <li><a href="songs/everything.html">Everything - Michael Bublé</a></li>
-      <li><a href="songs/fly-me-to-the-moon.html">Fly Me to the Moon - Frank Sinatra</a></li>
-      <li><a href="songs/forever-young.html">Forever Young - Alphaville</a></li>
-      <li><a href="songs/hey-jealousy.html">Hey Jealousy - Gin Blossoms</a></li>
-      <li><a href="songs/hey-jude.html">Hey Jude - The Beatles</a></li>
-      <li><a href="songs/hikaru-nara.html">Hikaru Nara - Goose House</a></li>
-      <li><a href="songs/holding-out-for-a-hero.html">Holding Out for a Hero - Bonnie Tyler</a></li>
-      <li><a href="songs/i-can-see-clearly-now.html">I Can See Clearly Now - Johnny Nash</a></li>
-      <li><a href="songs/i-cant-help-falling-in-love-with-you.html">I Can't Help Falling in Love with You - Elvis</a></li>
-      <li><a href="songs/i-know-youre-out-there-somewhere.html">I Know You're Out There Somewhere - The Moody Blues</a></li>
-      <li><a href="songs/i-think-were-alone-now.html">I Think We're Alone Now - Tommy James and the Shondells</a></li>
-      <li><a href="songs/jolene.html">Jolene - Dolly Parton</a></li>
-      <li><a href="songs/let-it-be.html">Let It Be - The Beatles</a></li>
-      <li><a href="songs/octopuss-garden.html">Octopus's Garden - The Beatles</a></li>
-      <li><a href="songs/oh-lamour.html">Oh l'Amour - Erasure</a></li>
-      <li><a href="songs/the-rose.html">The Rose - Bette Midler</a></li>
-      <li><a href="songs/run.html">Run - Collective Soul</a></li>
-      <li><a href="songs/somewhere-only-we-know.html">Somewhere Only We Know - Keane</a></li>
-      <li><a href="songs/summer-wind.html">The Summer Wind - Frank Sinatra</a></li>
-      <li><a href="songs/take-on-me.html">Take On Me - A-Ha</a></li>
-      <li><a href="songs/viva-la-vida.html">Viva la Vida - Coldplay</a></li>
-      <li><a href="songs/a-whiter-shade-of-pale.html">A Whiter Shade of Pale - Procol Harum</a></li>
-      <li><a href="songs/yesterday.html">Yesterday - The Beatles</a></li>
-      <li><a href="songs/your-wildest-dreams.html">Your Wildest Dreams - The Moody Blues</a></li>
-      <!-- <li><a href="songs/.html"></a></li> -->
-    </ul>
+    <fieldset class="sortBy">
+      <legend>Sort <span id="numSongs"></span> Songs</legend>
+      <label><input type="radio" name="sortBy" value="title" checked />Song Title</label>
+      <label><input type="radio" name="sortBy" value="artist" />Artist</label>
+      <label><input type="radio" name="sortBy" value="shuffle" />Shuffle</label>
+    </fieldset>
+    <ul class="songList"></ul>
     <!-- <p><a href="chords/all_chords.png">Chart of chords</p> -->
     <p><a href="chords/all-chords.html">Table of chords</p>
     <script type="module" src="./index.js"></script>

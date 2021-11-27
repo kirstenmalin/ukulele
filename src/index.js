@@ -1,7 +1,8 @@
+import songs from './songs/songList.js';
 import { showError } from './utils.js';
 
 const songList = document.querySelector('.songList');
-const shuffleBtn = document.querySelector('button.shuffle');
+const sortRadios = document.querySelectorAll('[name="sortBy"]');
 
 // ******************************** Maintain Shuffle Order
 function getOrder() {
@@ -12,25 +13,22 @@ function getOrder() {
 
 }
 
-function setSongOrder(order) {
-  const oldSongs = Array.from(songList.querySelectorAll('li'));
-  order.reverse().forEach((i) => {
-    const currentSong = oldSongs.find((song) => {
-      return song.dataset.index === i;
-    });
-    currentSong.remove();
-    songList.insertAdjacentElement('afterbegin', currentSong);
-  });
+function setOrderedSongs(order) {
+  if (order.length === 0) {
+    sortSongs({ target: { value: 'title' } });
+  } else {
+    const orderedSongs = order.map((i) => songs[i]);
+    setSongListHTML(orderedSongs);
+  }
 }
 
 function setOrderParam(order) {
   const orderParam = order.join(',');
-  const url = window.location.toString();
-  const queryIndex = url.indexOf('?');
-  window.location = url.substr(0, queryIndex) + '?order=' + orderParam;
-  // const url = new URL(window.location);
-  // const params = new URLSearchParams(url.searchParams);
-  // params.set('order', orderParam);
+  window.history.pushState('', '', `?order=${orderParam}`);
+}
+
+function clearOrderParam() {
+  window.history.pushState('', '', '?');
 }
 
 // ******************************** Shuffling
@@ -46,15 +44,58 @@ function shuffle(deck) {
 }
 
 function shuffleSongs() {
-  try {
-    const songs = Array.from(songList.querySelectorAll('li'));
-    const currentOrder = songs.map((song) => {
-      return song.dataset.index;
-    });
-    const newOrder = shuffle(currentOrder);
+  let currentOrder = getOrder();
+  if (currentOrder.length === 0) {
+    // If there's no current order, use an array of numbers from 0 to songs.length - 1
+    currentOrder = [...Array(songs.length).keys()];
+  }
+  const newOrder = shuffle(currentOrder);
 
-    setOrderParam(newOrder);
-    setSongOrder(newOrder);
+  setOrderParam(newOrder);
+  return setOrderedSongs(newOrder);
+}
+
+// ******************************** Sorting
+function sortBy(property) {
+  return () => {
+    clearOrderParam();
+    const sortedSongs = [...songs].sort((songA, songB) => {
+      const startsWithThe = /^the/;
+      let propA = songA[property].toLowerCase();
+      propA = startsWithThe.test(propA) ? propA.slice(4) : propA;
+      let propB = songB[property].toLowerCase();
+      propB = startsWithThe.test(propB) ? propB.slice(4) : propB;
+      if (propA < propB) {
+        return -1;
+      }
+      if (propA > propB) {
+        return 1;
+      }
+      return 0;
+    });
+    setSongListHTML(sortedSongs);
+  };
+}
+
+const sort = {
+  shuffle: shuffleSongs,
+  title: sortBy('title'),
+  artist: sortBy('artist')
+};
+
+function setSongListHTML(sortedSongs) {
+  songList.innerHTML = sortedSongs.reduce((acc, song) => (
+    `${acc}
+      <li data-title="${song.title}" data-artist="${song.artist}">
+        <a href="songs/${song.filename}">${song.title} &mdash; ${song.artist}</a>
+      </li>
+    `
+  ), '');
+}
+
+function sortSongs(evt) {
+  try {
+    sort[evt?.target?.value]?.();
   } catch (err) {
     showError(err);
   }
@@ -65,18 +106,21 @@ function setNumSongs(numSongs) {
 }
 
 function setIndices() {
-  const songs = Array.from(songList.querySelectorAll('li'));
-  songs.forEach((song, i) => {
+  const songLIs = Array.from(songList.querySelectorAll('li'));
+  songLIs.forEach((song, i) => {
     song.dataset.index = i;
   });
-  setNumSongs(songs.length);
 }
 
 // ******************************** Initialization
 try {
+  setNumSongs(songs.length);
+  setOrderedSongs(getOrder());
   setIndices();
-  setSongOrder(getOrder());
-  shuffleBtn.addEventListener('click', shuffleSongs);
+  Array.prototype.forEach.call(
+    sortRadios,
+    (radio) => radio.addEventListener('click', sortSongs)
+  );
 } catch (err) {
   showError(err);
 }

@@ -95,6 +95,8 @@ tbody th {
   margin: 0 var(--half-spacing) 0 0;
 }
 
+.sortBy {
+  float: right;
 }
 
 /* Logging */
@@ -119,8 +121,4 @@ tbody th {
 .log p {
   padding: 0;
   margin: var(--half-spacing) 0;
-}
-
-.shuffle {
-  float: right;
 }
