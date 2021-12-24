@@ -196,7 +196,7 @@ function setNoteImages() {
 function setupScroll() {
   const scrollControls = document.querySelector('.scrollControls');
   // const speeds = [1, 1.5, 1.8, 2, 2.5, 3, 4, 5];
-  const speeds = [200, 175, 150, 125, 100, 90, 75, 50, 30, 20];
+  const speeds = [150, 135, 125, 110, 100, 90, 50];
   speeds.forEach((speed) => {
     scrollControls.insertAdjacentHTML('beforeend',
       `<label><input type="radio" name="scrollSpeed" value="${speed}">${speed}</label>`);
