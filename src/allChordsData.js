@@ -119,7 +119,7 @@ export const AChords = {
   'Asus2': {
     'offset': 2,
     'chord': [
-      { 'finger': '1', 'fret': 3, 'note': 'A' },
+      { 'finger': '1', 'fret': 3, 'note': 'B' },
       { 'finger': '2', 'fret': 3, 'note': 'E' },
       { 'finger': '3', 'fret': 4, 'note': 'A' },
       { 'finger': '', 'fret': 0, 'note': 'A' }
@@ -1730,10 +1730,10 @@ export const FChords = {
   'Fdim': {
     'offset': 0,
     'chord': [
-      { 'finger': '1', 'fret': 1, 'note': 'B♭' },
-      { 'finger': '', 'fret': 0, 'note': 'X' },
-      { 'finger': '2', 'fret': 1, 'note': 'F' },
-      { 'finger': '3', 'fret': 2, 'note': 'B' }
+      { 'finger': '1', 'fret': 1, 'note': 'A♭' },
+      { 'finger': '3', 'fret': 2, 'note': 'F' },
+      { 'finger': '2', 'fret': 1, 'note': 'D' },
+      { 'finger': '4', 'fret': 2, 'note': 'B' }
     ]
   },
   'Fm': {
