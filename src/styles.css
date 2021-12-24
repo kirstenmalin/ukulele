@@ -5,6 +5,7 @@
   --spacing: 16px;
   --half-spacing: calc(var(--spacing) / 2);
   --negative-spacing: calc(0px - var(--spacing));
+  --article-right-margin: calc(var(--spacing) * 4.5);
 
   --aside-border-color: #999;
   --aside-font-color: green;
@@ -41,11 +42,17 @@
   }
 }
 
+@media (max-width: 700px){
+  :root {
+    --spacing: 12px;
+  }
+}
+
 body {
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: sans-serif;
-  padding: 8px 8px 24px;
+  padding: var(--half-spacing) var(--half-spacing) calc(var(--spacing) * 1.5)
 }
 
 a, a:visited {
@@ -59,7 +66,7 @@ select {
 
 /* Table of chords */
 th, td {
-  padding: 8px;
+  padding: var(--half-spacing);
 }
 
 thead th {
@@ -74,14 +81,15 @@ tbody th {
 .scrollControls {
   display: inline-block;
   float: right;
-  padding: 4px;
+  font-size: calc(var(--spacing) * 0.75);
+  padding: calc(var(--spacing) / 4);
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
 .scrollControls legend {
-  max-width: 50px;
+  max-width: calc(var(--spacing) * 3);
 }
 
 .scrollControls label {

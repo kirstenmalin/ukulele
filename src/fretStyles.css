@@ -25,6 +25,12 @@
   }
 }
 
+@media (max-width: 700px){
+  .chordFrets {
+    --fret-half-width: 4px;
+  }
+}
+
 .chordFrets .chordName {
   color: var(--chord-font-color);
   font-size: var(--fret-width);

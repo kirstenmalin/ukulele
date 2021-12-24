@@ -1,14 +1,14 @@
 /** Styles for song pages **/
 
 li {
-  margin: 16px 0;
+  margin: var(--spacing) 0;
 }
 
 article {
-  font-size: 16px;
+  font-size: var(--spacing);
   letter-spacing: 0.5px;
   line-height: var(--spacing);
-  margin-right: 75px;
+  margin-right: var(--article-right-margin);
   word-spacing: 2px;
 }
 
@@ -18,9 +18,11 @@ section {
 }
 
 p {
-  margin: 12px 0;
+  line-height: calc(var(--spacing) * 2);
+  margin: calc(var(--spacing) * 0) 0;
   padding-top: var(--spacing);
   position: relative;
+  vertical-align: bottom;
 }
 
 p.spaced,
