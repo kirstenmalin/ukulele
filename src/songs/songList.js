@@ -175,6 +175,11 @@ export const songList = [
     artist: 'A-Ha'
   },
   {
+    filename: 'tuesday-afternoon.html',
+    title: 'Tuesday Afternoon',
+    artist: 'The Moody Blues'
+  },
+  {
     filename: 'viva-la-vida.html',
     title: 'Viva la Vida',
     artist: 'Coldplay'
