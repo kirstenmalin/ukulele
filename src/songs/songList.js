@@ -125,6 +125,11 @@ export const songList = [
     artist: 'Tommy James and the Shondells'
   },
   {
+    filename: 'iris.html',
+    title: 'Iris',
+    artist: 'Goo Goo Dolls'
+  },
+  {
     filename: 'island-in-the-sun.html',
     title: 'Island in the Sun',
     artist: 'Weezer'
