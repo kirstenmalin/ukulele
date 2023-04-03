@@ -1307,9 +1307,9 @@ export const DsharpChords = {
   'D♯dim': {
     'offset': 0,
     'chord': [
-      { 'finger': '2', 'fret': 2, 'note': 'A' },
-      { 'finger': '1', 'fret': 3, 'note': 'D♯' },
-      { 'finger': '3', 'fret': 2, 'note': 'F♯' },
+      { 'finger': '1', 'fret': 2, 'note': 'A' },
+      { 'finger': '3', 'fret': 3, 'note': 'D♯' },
+      { 'finger': '2', 'fret': 2, 'note': 'F♯' },
       { 'finger': '', 'fret': 0, 'note': 'A' }
     ]
   },
