@@ -22,7 +22,7 @@ Modifying the chords themselves and adding new songs is a manual process of edit
 
 To change or add chords in a song, open the corresponding html file in `/src/songs`. Each chord is in `<b>` tag with a class `chord`. Just change the contents of the `<b>` tag, or add a new one wherever you want.
 
-To add a new song, copy `/src/songs/template.html` into a new file in the `/songs` directory. Add a link to the new file in `/src/index.html`. Then type or paste in the lyrics and add chords.
+To add a new song, copy `/src/songs/template.html` into a new file in the `/songs` directory. Then type or paste in the lyrics and add chords. Add the new song title and filename in `/src/songs/songList.js`.
 
 ## Chord calculation scripts
 
