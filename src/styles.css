@@ -24,7 +24,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --aside-border-color: #999;
     --aside-font-color: #3ffb3f;
     --background-color: #322;
@@ -42,7 +42,7 @@
   }
 }
 
-@media (max-width: 700px){
+@media (max-width: 700px) {
   :root {
     --spacing: 12px;
   }
@@ -52,10 +52,11 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: sans-serif;
-  padding: var(--half-spacing) var(--half-spacing) calc(var(--spacing) * 1.5)
+  padding: var(--half-spacing) var(--half-spacing) calc(var(--spacing) * 1.5);
 }
 
-a, a:visited {
+a,
+a:visited {
   color: var(--link-color);
 }
 
@@ -65,7 +66,8 @@ select {
 }
 
 /* Table of chords */
-th, td {
+th,
+td {
   padding: var(--half-spacing);
 }
 
@@ -79,7 +81,6 @@ tbody th {
 
 /* Scroll Controls */
 .scrollControls {
-  display: inline-block;
   float: right;
   font-size: calc(var(--spacing) * 0.75);
   padding: calc(var(--spacing) / 4);
