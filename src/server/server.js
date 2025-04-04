@@ -1,5 +1,5 @@
-const express = require('express');
-const chordCalc = require('./chordCalc.js');
+import express from 'express';
+import chordCalc from './chordCalc.js';
 
 const app = express();
 

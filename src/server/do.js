@@ -1,5 +1,5 @@
-const chordCalc = require('./chordCalc.js');
-const getNotesFromFrets = require('./notesFromFrets.js');
+import chordCalc from './chordCalc.js';
+import getNotesFromFrets from './notesFromFrets.js';
 
 const chordCalcIndex = process.argv.indexOf('--chord-calc');
 if (chordCalcIndex > -1) {

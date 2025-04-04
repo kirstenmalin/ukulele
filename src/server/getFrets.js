@@ -1,4 +1,4 @@
-const dfns = require('../definitions.js');
+import * as dfns from '../definitions.js';
 
 //
 /*
@@ -9,7 +9,7 @@ For each string, figure out which chord notes are within the first 5 frets
 */
 
 // given an array of notes, like from chordCalc
-function whatever(notesArr) {
+export default function getFrets(notesArr) {
   return dfns.openStringNotes.map((string) => {
     const openStringIndex = dfns.notesSharp.indexOf(string);
     notesArr.forEach((note) => {
@@ -22,5 +22,3 @@ function whatever(notesArr) {
     });
   });
 }
-
-module.exports = whatever;

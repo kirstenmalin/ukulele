@@ -50,19 +50,3 @@ export const chordTypeDfns = {
   '7sus4': [0, 5, 7, 10]
 };
 export const chordTypes = Object.keys(chordTypeDfns);
-
-// // eslint-disable-next-line no-undef
-// (module || {}).exports = {
-//   allNotes,
-//   allNotesInOrder,
-//   chordTypeDfns,
-//   chordTypes,
-//   keysWithFlat,
-//   keysWithSharp,
-//   majorKeys,
-//   minorChordTypes,
-//   minorKeys,
-//   notesFlat,
-//   notesSharp,
-//   openStringNotes
-// };

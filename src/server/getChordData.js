@@ -1,6 +1,6 @@
-const fs = require('fs');
-const { createSVGWindow } = require('svgdom');
-const { SVG, registerWindow } = require('@svgdotjs/svg.js');
+import fs from 'fs';
+import { createSVGWindow } from 'svgdom';
+import { SVG, registerWindow } from '@svgdotjs/svg.js';
 
 const window = createSVGWindow();
 registerWindow(window, window.document);

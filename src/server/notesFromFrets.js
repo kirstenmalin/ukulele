@@ -6,7 +6,7 @@
 // notesSharps
 // notesFlats
 
-const dfns = require('../definitions.js');
+import * as dfns from '../definitions.js';
 
 // notesSharp
 // notesFlat
@@ -22,7 +22,7 @@ function getNote(notesArray) {
 
 // This is looping through each string twice.
 // TODO: only loop once. The indices are the same for each array.
-function getNotesFromFrets(frets) {
+export default function getNotesFromFrets(frets) {
   if (!Array.isArray(frets)) {
     frets = frets.replace('[', '').replace(']', '').replace(/s/g, '').split(',');
   }
@@ -31,5 +31,3 @@ function getNotesFromFrets(frets) {
     notesFlats: frets.map(getNote(dfns.notesFlat))
   };
 }
-
-module.exports = getNotesFromFrets;
