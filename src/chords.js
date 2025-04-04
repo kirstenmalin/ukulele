@@ -176,7 +176,7 @@ function populateKeySelect() {
 
 function setChordImages() {
   const chordList = getChordList();
-  log(`chordList: ${chordList}`);
+  log(`chordList: ${chordList.join(', ')}`);
   const chordListItems = chordList.reduce((acc, chord) => {
     return acc + createChordFrets(chord, true);
   }, '');
