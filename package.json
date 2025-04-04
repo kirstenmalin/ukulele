@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/kirstenmalin/ukulele#readme",
   "dependencies": {
-    "@svgdotjs/svg.js": "^3.0.16",
+    "@svgdotjs/svg.js": "3.0.16",
     "express": "5.1.0",
     "svgdom": "0.1.8"
   }
