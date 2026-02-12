@@ -5,7 +5,7 @@
   --spacing: 16px;
   --half-spacing: calc(var(--spacing) / 2);
   --negative-spacing: calc(0px - var(--spacing));
-  --article-right-margin: calc(var(--spacing) * 4.5);
+  --article-right-margin: calc(var(--spacing) * 2);
 
   --aside-border-color: #999;
   --aside-font-color: green;
@@ -52,7 +52,11 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: sans-serif;
-  padding: var(--half-spacing) var(--half-spacing) calc(var(--spacing) * 1.5);
+  padding: 
+	var(--half-spacing)
+	/*calc(var(--spacing) / 4)*/0
+	calc(var(--spacing) * 1.5)
+	var(--half-spacing);
 }
 
 a,
@@ -83,9 +87,10 @@ tbody th {
 .scrollControls {
   float: right;
   font-size: calc(var(--spacing) * 0.75);
-  padding: calc(var(--spacing) / 4);
   position: sticky;
+  padding: 0;
   top: 0;
+  right: 0;
   z-index: 2;
 }
 
@@ -101,7 +106,8 @@ tbody th {
 }
 
 .scrollControls input {
-  margin: 0 var(--half-spacing) 0 0;
+  /*margin: 0 var(--half-spacing) 0 0;*/
+  margin: 0 2px 0 0;
 }
 
 .sortBy {
