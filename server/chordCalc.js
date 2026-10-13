@@ -1,4 +1,4 @@
-import * as dfns from '../definitions.js';
+import * as dfns from '../src/definitions.js';
 
 function logBadChord (chordName) {
   console.log('Invalid chord: ', chordName);

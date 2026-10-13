@@ -3,7 +3,7 @@ import path from 'node:path';
 import chordCalc from './chordCalc.js';
 
 const router = express.Router();
-const srcPath = path.join(import.meta.dirname, '../');
+const srcPath = path.join(import.meta.dirname, '../src');
 
 router.use(express.static(srcPath));
 router.get('/chords/:chord', (req, res) => {
