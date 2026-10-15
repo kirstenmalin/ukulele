@@ -52,11 +52,11 @@ body {
   background-color: var(--background-color);
   color: var(--font-color);
   font-family: sans-serif;
-  padding: 
-	var(--half-spacing)
-	/*calc(var(--spacing) / 4)*/0
-	calc(var(--spacing) * 1.5)
-	var(--half-spacing);
+  padding:
+    var(--half-spacing)
+    /*calc(var(--spacing) / 4)*/ 0
+    calc(var(--spacing) * 1.5)
+    var(--half-spacing);
 }
 
 a,
@@ -112,6 +112,14 @@ tbody th {
 
 .sortBy {
   float: right;
+
+  @media (width < 500px) {
+    margin: 0 0 1em 1em;
+
+    & label {
+      display: block;
+    }
+  }
 }
 
 /* Logging */
