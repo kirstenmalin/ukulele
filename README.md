@@ -1,5 +1,7 @@
 # Ukulele Chords
 
+[See it in action!](https://kirstenmalin.com/projects/ukulele/)
+
 This app displays song lyrics that have been annotated with chords to facilitate playing the songs on a ukulele.
 
 I started this project not long after I started learning to play the ukulele. When I looked up song chords, a lot of the songs I found either had mistakes in the chords or lyrics, or I wanted to change how I played the intro or the ending. I tried various apps and online tools, but none of them were quite what I wanted.
