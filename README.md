@@ -1,4 +1,4 @@
-# Ukulele Tools
+# Ukulele Chords
 
 This app displays song lyrics that have been annotated with chords to facilitate playing the songs on a ukulele.
 
