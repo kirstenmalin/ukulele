@@ -115,8 +115,12 @@ function setIndices() {
 // ******************************** Initialization
 try {
   setNumSongs(songs.length);
-  setOrderedSongs(getOrder());
+  const songOrder = getOrder();
+  setOrderedSongs(songOrder);
   setIndices();
+  if (songOrder.length) {
+    document.querySelector('input[value="shuffle"]').checked = true;
+  }
   Array.prototype.forEach.call(
     sortRadios,
     (radio) => radio.addEventListener('click', sortSongs)
