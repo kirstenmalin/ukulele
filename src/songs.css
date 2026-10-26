@@ -93,6 +93,35 @@ p.spaced,
   margin: 0 4px 4px;
 }
 
+/* Scroll Controls */
+.scrollControls {
+  border-color: var(--color-primary-med);
+  border-radius: var(--border-radius);
+  float: right;
+  font-size: calc(var(--spacing) * 0.75);
+  position: sticky;
+  padding: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.scrollControls legend {
+  max-width: calc(var(--spacing) * 3);
+}
+
+.scrollControls label {
+  background-color: var(--color-primary-low);
+  display: block;
+  padding: var(--half-spacing);
+  margin: var(--half-spacing) 0;
+}
+
+.scrollControls input {
+  /*margin: 0 var(--half-spacing) 0 0;*/
+  margin: 0 2px 0 0;
+}
+
 /* Comments */
 aside {
   border-top: solid 1px var(--aside-border-color);

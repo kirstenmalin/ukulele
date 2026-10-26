@@ -1,0 +1,59 @@
+/**
+ * Color scheme
+ * All main colors, -dark, and -darker, as well as primary-light and secondary-light, have >4.5:1 contrast against white.
+ * tertiary-light has >3:1 against white.
+ * All -lighter colors have >4.5:1 against black.
+ */
+
+:root {
+  --color-background: #ffffff;
+  --color-gray-med: #888;
+  --color-gray-low: #f3f3f3;
+  --color-text: #0a0a0a;
+  --color-text-inverted: #fff;
+  --color-primary: #4c0fab;
+  --color-primary-med: #8249ff;
+  --color-primary-low: #e3d6ff;
+  --color-secondary: #005a8f;
+  --color-secondary-med: #0071b3;
+  --color-secondary-low: #d5ecff;
+  --color-tertiary: #00523f;
+  --color-tertiary-med: #569982;
+  --color-tertiary-low: #94d8c0;
+  --color-error: #860114;
+  --color-error-low: #ffd1cd;
+
+  --aside-border-color: var(--color-secondary-med);
+  --aside-font-color: var(--color-tertiary);
+  --chord-font-color: var(--color-primary);
+  --chord-sharp-flat-color: var(--color-secondary);
+  --link-color: var(--color-secondary);
+  --select-bg-color: var(--color-background);
+  --select-font-color: var(--color-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000211;
+    --color-gray-med: #777;
+    --color-gray-low: #333333;
+    --color-text: #f0f0f0;
+    --color-text-inverted: #0a0a0a;
+    --color-primary: #b79dff;
+    --color-primary-med: #976afd;
+    --color-primary-low: #3b0b86;
+    --color-secondary: #9ad3f5;
+    --color-secondary-med: #509ac9;
+    --color-secondary-low: #005a8f;
+    --color-tertiary: #9adfc7;
+    --color-tertiary-med: #68ab94;
+    --color-tertiary-low: #00241a;
+    --color-error: #ff847e;
+    --color-error-low: #540008;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+

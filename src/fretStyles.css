@@ -1,9 +1,12 @@
 /* Scale whole chord fret by changing the value of --fret-half-width */
 
 /*
-  Inheriting these vars from styles.css:
+  Inheriting these vars from colors.css:
   --chord-font-color
-  --background-color
+  --color-background
+  --color-secondary
+  --color-text
+  --color-text-inverted
 */
 
 .chordFrets {
@@ -14,15 +17,8 @@
   --finger-number-size: calc(var(--fret-width) * 0.8);
   --fret-border: 1px solid var(--fret-border-color);
 
-  --fret-border-color: #555;
-  --finger-number-bg-color: #333;
-}
-
-@media (prefers-color-scheme: dark) {
-  .chordFrets {
-    --fret-border-color: var(--font-color, #fff);
-    --finger-number-bg-color: #a11;
-  }
+  --fret-border-color: var(--color-text);
+  --finger-number-bg-color: var(--color-secondary);
 }
 
 @media (max-width: 700px){
@@ -76,7 +72,7 @@
 }
 
 .fretboard .noteName {
-  background-color: var(--background-color);
+  background-color: var(--color-background);
   font-size: calc(var(--fret-width) * 0.6);
   line-height: var(--fret-width);
   text-align: center;
@@ -85,7 +81,7 @@
 .fretboard .fingerNumber {
   background-color: var(--finger-number-bg-color);
   border-radius: 50%;
-  color: #fff;
+  color: var(--color-text-inverted);
   font-size: calc(var(--finger-number-size) * 0.8);
   height: var(--finger-number-size);
   line-height: var(--finger-number-size);

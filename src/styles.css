@@ -1,62 +1,46 @@
+@import "./colors.css";
 @import "./songs.css";
 @import "./fretStyles.css";
 
 :root {
-  --spacing: 16px;
+  --spacing: 1rem;
   --half-spacing: calc(var(--spacing) / 2);
   --negative-spacing: calc(0px - var(--spacing));
   --article-right-margin: calc(var(--spacing) * 2);
 
-  --aside-border-color: #999;
-  --aside-font-color: green;
-  --background-color: #fff;
-  --chord-font-color: #900;
-  --chord-sharp-flat-color: #00f;
-  --error-background-color: #fcc;
-  --error-border-color: #900;
-  --font-color: #111;
-  --link-color: -webkit-link;
-  --log-background-color: #ddf;
-  --log-border-color: #009;
-  --scroll-control-bg-color: #f6f3ff;
-  --select-bg-color: initial;
-  --select-font-color: initial;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --aside-border-color: #999;
-    --aside-font-color: #3ffb3f;
-    --background-color: #322;
-    --chord-font-color: #f77;
-    --chord-sharp-flat-color: #bbf;
-    --error-background-color: #822;
-    --error-border-color: var(--font-color);
-    --font-color: #fdd;
-    --link-color: #bbe;
-    --log-background-color: #228;
-    --log-border-color: #8282ef;
-    --scroll-control-bg-color: #5c2bad;
-    --select-bg-color: #595959;
-    --select-font-color: var(--font-color);
-  }
+  --border-divider: solid 4px var(--color-secondary-med);
+  --border-page-bookends: solid 8px var(--color-secondary-med);
+  --border-radius: 0.3em;
+  --box-shadow-primary-large: 2px 2px 5px 3px var(--color-primary-low, black);
+  --box-shadow-primary: 1px 1px 2px 2px var(--color-primary-low, black);
+  --box-shadow-secondary-large: 2px 2px 5px 3px var(--color-secondary-low, black);
+  --box-shadow-secondary: 1px 1px 2px 2px var(--color-secondary-low, black);
+  --box-shadow-secondary-small: 1px 1px 0px 0px var(--color-secondary-med, black);
 }
 
 @media (max-width: 700px) {
   :root {
-    --spacing: 12px;
+    --spacing: 0.75em;
   }
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--color-background);
+  color: var(--color-text);
   font-family: sans-serif;
   padding:
     var(--half-spacing)
     /*calc(var(--spacing) / 4)*/ 0
     calc(var(--spacing) * 1.5)
     var(--half-spacing);
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+hr {
+  border-color: var(--color-secondary-med);
 }
 
 a,
@@ -66,6 +50,7 @@ a:visited {
 
 select {
   background-color: var(--select-bg-color);
+  border-radius: var(--border-radius);
   color: var(--select-font-color);
 }
 
@@ -76,41 +61,15 @@ td {
 }
 
 thead th {
-  border-bottom: solid 1px royalblue;
+  border-bottom: solid 1px var(--color-primary);
 }
 
 tbody th {
-  border-right: solid 1px royalblue;
-}
-
-/* Scroll Controls */
-.scrollControls {
-  float: right;
-  font-size: calc(var(--spacing) * 0.75);
-  position: sticky;
-  padding: 0;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.scrollControls legend {
-  max-width: calc(var(--spacing) * 3);
-}
-
-.scrollControls label {
-  background-color: var(--scroll-control-bg-color);
-  display: block;
-  padding: var(--half-spacing);
-  margin: var(--half-spacing) 0;
-}
-
-.scrollControls input {
-  /*margin: 0 var(--half-spacing) 0 0;*/
-  margin: 0 2px 0 0;
+  border-right: solid 1px var(--color-primary);
 }
 
 .sortBy {
+  border-radius: var(--border-radius);
   float: right;
 
   @media (width < 500px) {
@@ -125,20 +84,20 @@ tbody th {
 /* Logging */
 .log,
 .error {
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   font-family: monospace;
-  margin: 4px auto;
-  padding: 4px;
+  margin: 0.25em auto;
+  padding: 0.25em;
 }
 
 .error {
-  background-color: var(--error-background-color);
-  border: solid 1px var(--error-border-color);
+  background-color: var(--color-error-low);
+  border: solid 1px var(--color-error);
 }
 
 .log {
-  background-color: var(--log-background-color);
-  border: solid 1px var(--log-border-color);
+  background-color: var(--color-secondary-low);
+  border: solid 1px var(--color-secondary);
 }
 
 .log p {
