@@ -46,13 +46,24 @@ hr {
 
 a,
 a:visited {
-  color: var(--link-color);
-}
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+  outline: solid 3px transparent;
+  outline-offset: 0.34em;
+  text-decoration-color: var(--color-primary-med);
+  text-decoration-thickness: 0.125em;
+  text-underline-position: under;
+  transition: outline-color ease-in-out 0.2s;
+
+  &:focus-visible {
+    outline-color: var(--color-secondary-med);
+  }}
 
 select {
-  background-color: var(--select-bg-color);
+  background-color: var(--color-background);
+  border-color: var(--color-secondary-med);
   border-radius: var(--border-radius);
-  color: var(--select-font-color);
+  color: var(--color-text);
 }
 
 input[type="radio"] {

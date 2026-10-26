@@ -123,7 +123,7 @@ p.spaced,
 
 /* Comments */
 aside {
-  border-top: solid 1px var(--aside-border-color);
+  border-top: solid 1px var(--color-secondary-med);
 }
 
 aside h3 {
@@ -137,7 +137,7 @@ aside p {
 
 article aside {
   border: none;
-  color: var(--aside-font-color);
+  color: var(--color-tertiary);
   margin: var(--half-spacing) 0;
   padding: 0;
 }

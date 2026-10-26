@@ -22,14 +22,8 @@
   --color-tertiary-low: #94d8c0;
   --color-error: #860114;
   --color-error-low: #ffd1cd;
-
-  --aside-border-color: var(--color-secondary-med);
-  --aside-font-color: var(--color-tertiary);
   --chord-font-color: var(--color-primary);
   --chord-sharp-flat-color: var(--color-secondary);
-  --link-color: var(--color-secondary);
-  --select-bg-color: var(--color-background);
-  --select-font-color: var(--color-text);
 }
 
 @media (prefers-color-scheme: dark) {
